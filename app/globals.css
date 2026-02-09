@@ -1,79 +1,41 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
-  /* Light theme with cream/beige tones for the premium law firm aesthetic */
-  --background: oklch(0.97 0.01 85); /* Warm cream background */
-  --foreground: oklch(0.15 0.02 258); /* Dark navy text */
-  --card: oklch(0.99 0.005 85); /* Light cream card */
-  --card-foreground: oklch(0.15 0.02 258);
-  --popover: oklch(0.99 0.005 85);
-  --popover-foreground: oklch(0.15 0.02 258);
-  --primary: oklch(0.15 0.02 258); /* Dark navy primary */
-  --primary-foreground: oklch(0.97 0.01 85);
-  --secondary: oklch(0.78 0.18 95); /* Yellow-green accent #c7d943 */
-  --secondary-foreground: oklch(0.12 0.015 258);
-  --muted: oklch(0.92 0.01 85);
-  --muted-foreground: oklch(0.45 0.015 258);
-  --accent: oklch(0.78 0.18 95); /* Yellow-green #c7d943 */
-  --accent-foreground: oklch(0.12 0.015 258);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.88 0.01 85);
-  --input: oklch(0.95 0.01 85);
-  --ring: oklch(0.78 0.18 95 / 0.5);
-  --chart-1: oklch(0.15 0.02 258);
-  --chart-2: oklch(0.78 0.18 95);
-  --chart-3: oklch(0.92 0.01 85);
-  --chart-4: oklch(0.15 0.02 258);
-  --chart-5: oklch(0.78 0.18 95);
+  /* Premium Dark Theme - Elegant Gold & Deep Black */
+  --background: #0a0a0c; /* Deep black with subtle blue undertone */
+  --foreground: #f5f5f7; /* Off-white text */
+  --card: #111118; /* Charcoal for cards */
+  --card-foreground: #f5f5f7;
+  --popover: #111118;
+  --popover-foreground: #f5f5f7;
+  --primary: #f5f5f7; /* Off-white primary */
+  --primary-foreground: #0a0a0c;
+  --secondary: #c9a962; /* Elegant gold accent */
+  --secondary-foreground: #0a0a0c;
+  --muted: #1a1a20; /* Muted dark */
+  --muted-foreground: #9b9b9b; /* Muted gray text */
+  --accent: #c9a962; /* Gold accent */
+  --accent-foreground: #0a0a0c;
+  --destructive: #ef4444;
+  --destructive-foreground: #f5f5f7;
+  --border: #2a2a30; /* Subtle dark border */
+  --input: #1a1a20;
+  --ring: rgba(201, 169, 98, 0.5); /* Gold ring with transparency */
+  --chart-1: #c9a962;
+  --chart-2: #f5f5f7;
+  --chart-3: #1a1a20;
+  --chart-4: #d4b878;
+  --chart-5: #9b9b9b;
   --radius: 0.25rem;
-  --sidebar: oklch(0.99 0.005 85);
-  --sidebar-foreground: oklch(0.15 0.02 258);
-  --sidebar-primary: oklch(0.78 0.18 95);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.78 0.18 95);
-  --sidebar-accent-foreground: oklch(0.15 0.02 258);
-  --sidebar-border: oklch(0.88 0.01 85);
-  --sidebar-ring: oklch(0.78 0.18 95 / 0.5);
-}
-
-.dark {
-  /* Dark theme - Charcoal/black with yellow-green accent matching reference design */
-  --background: oklch(0.12 0.01 258); /* Deep charcoal/dark navy */
-  --foreground: oklch(0.95 0.005 85); /* Cream/off-white text */
-  --card: oklch(0.16 0.01 258); /* Slightly lighter charcoal cards */
-  --card-foreground: oklch(0.95 0.005 85);
-  --popover: oklch(0.16 0.01 258);
-  --popover-foreground: oklch(0.95 0.005 85);
-  --primary: oklch(0.95 0.005 85); /* Cream primary in dark mode */
-  --primary-foreground: oklch(0.12 0.01 258);
-  --secondary: oklch(0.78 0.18 95); /* Yellow-green accent #c7d943 */
-  --secondary-foreground: oklch(0.12 0.01 258);
-  --muted: oklch(0.22 0.01 258); /* Muted dark */
-  --muted-foreground: oklch(0.65 0.01 85); /* Muted cream text */
-  --accent: oklch(0.78 0.18 95); /* Yellow-green #c7d943 */
-  --accent-foreground: oklch(0.12 0.01 258);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.95 0 0);
-  --border: oklch(0.25 0.01 258); /* Dark border */
-  --input: oklch(0.22 0.01 258);
-  --ring: oklch(0.78 0.18 95 / 0.5);
-  --chart-1: oklch(0.78 0.18 95);
-  --chart-2: oklch(0.95 0.005 85);
-  --chart-3: oklch(0.22 0.01 258);
-  --chart-4: oklch(0.78 0.18 95);
-  --chart-5: oklch(0.95 0.005 85);
-  --sidebar: oklch(0.12 0.01 258);
-  --sidebar-foreground: oklch(0.95 0.005 85);
-  --sidebar-primary: oklch(0.78 0.18 95);
-  --sidebar-primary-foreground: oklch(0.12 0.01 258);
-  --sidebar-accent: oklch(0.78 0.18 95);
-  --sidebar-accent-foreground: oklch(0.12 0.01 258);
-  --sidebar-border: oklch(0.25 0.01 258);
-  --sidebar-ring: oklch(0.78 0.18 95 / 0.5);
+  --sidebar: #0a0a0c;
+  --sidebar-foreground: #f5f5f7;
+  --sidebar-primary: #c9a962;
+  --sidebar-primary-foreground: #0a0a0c;
+  --sidebar-accent: #c9a962;
+  --sidebar-accent-foreground: #0a0a0c;
+  --sidebar-border: #2a2a30;
+  --sidebar-ring: rgba(201, 169, 98, 0.5);
 }
 
 @theme inline {
@@ -128,7 +90,6 @@
     @apply bg-background text-foreground;
   }
 
-
   /* RTL support for Arabic content */
   [dir="rtl"] {
     direction: rtl;
@@ -152,7 +113,6 @@
     font-family: var(--font-cairo), sans-serif;
     font-weight: 700;
   }
-
 
   .text-balance {
     text-wrap: balance;
@@ -199,20 +159,40 @@
     @apply w-px bg-accent/60;
   }
 
-  /* Section backgrounds */
-  .bg-cream {
-    background-color: oklch(0.96 0.015 85);
+  /* Premium section backgrounds */
+  .bg-premium {
+    background-color: #111118;
   }
 
-  .dark .bg-cream {
-    background-color: oklch(0.94 0.015 85);
+  .bg-premium-dark {
+    background-color: #0a0a0c;
   }
 
-  .bg-charcoal {
-    background-color: oklch(0.12 0.01 258);
+  .bg-premium-gradient {
+    background: linear-gradient(180deg, #0a0a0c 0%, #111118 100%);
   }
 
-  .bg-charcoal-light {
-    background-color: oklch(0.16 0.01 258);
+  /* Gold gradient text effect */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #c9a962 0%, #d4b878 50%, #c9a962 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Subtle gold glow effect */
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(201, 169, 98, 0.15);
+  }
+
+  /* Premium card hover effect */
+  .premium-card {
+    @apply bg-card border border-border transition-all duration-300;
+  }
+
+  .premium-card:hover {
+    @apply border-accent/50;
+    box-shadow: 0 0 30px rgba(201, 169, 98, 0.1);
   }
 }
+

@@ -5,14 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Menu, X, Phone } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-import darkLogo from "@/assets/logos/dark-logo-icon.png";
-import lightLogo from "@/assets/logos/light-logo-icon.png";
+import Logo from "@/assets/logos/FIRMEN-LOGO.png";
 import Image from "next/image";
 import { ServiceConsultationModal } from "./service-consultation-modal";
 
@@ -44,48 +42,21 @@ export function Navbar() {
           <div className="flex h-16 lg:h-20 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <Link href="/" className="flex items-center group">
+              <Link href="/" className="flex items-center gap-2 group">
                 {/* Elegant Law Firm Icon */}
-                <div className="relative me-2 lg:me-3">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-accent rounded-none flex items-center justify-center transition-all duration-300">
-                    <div className="w-6 h-6 lg:w-8 lg:h-8 flex flex-col items-center justify-center">
-                      <Image
-                        src={lightLogo}
-                        alt="light-logo"
-                        width={28}
-                        height={28}
-                        className="dark:hidden w-6 h-6 lg:w-7 lg:h-7"
-                      />
-                      <Image
-                        src={darkLogo}
-                        alt="dark-logo"
-                        width={28}
-                        height={28}
-                        className="hidden dark:block w-6 h-6 lg:w-7 lg:h-7"
-                      />
-                    </div>
-                  </div>
-                </div>
+                <Image
+                  src={Logo}
+                  alt="Adlex Logo"
+                  width={30}
+                  height={30}
+                  priority
+                />
 
-                {locale === "ar" ? (
-                  <div className="hidden sm:flex flex-col">
-                    <span className="text-xl lg:text-2xl font-bold text-foreground tracking-wide leading-none font-serif">
-                      أديـ<span className="text-accent">كـس</span>
-                    </span>
-                    <span className="text-[8px] lg:text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-1 uppercase">
-                      استشارات قانونية
-                    </span>
-                  </div>
-                ) : (
-                  <div className="hidden sm:flex flex-col">
-                    <span className="text-xl lg:text-2xl font-bold text-foreground tracking-[0.2em] leading-none uppercase font-serif">
-                      AD<span className="text-accent">LEX</span>
-                    </span>
-                    <span className="text-[8px] lg:text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-1 uppercase">
-                      Legal Counsel
-                    </span>
-                  </div>
-                )}
+                <div className="hidden sm:flex flex-col">
+                  <span className="text-2xl font-bold leading-tight tracking-tight text-foreground group-hover:text-primary transition-colors duration-300">
+                    {locale === "ar" ? "فيرمن" : "Firmen"}
+                  </span>
+                </div>
               </Link>
             </div>
 
@@ -112,7 +83,6 @@ export function Navbar() {
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center gap-4 rtl:space-x-reverse">
               <LanguageSwitcher />
-              <ThemeToggle />
               <Button
                 variant="outline"
                 onClick={() => setIsConsultationOpen(true)}
@@ -125,7 +95,6 @@ export function Navbar() {
             {/* Mobile menu button */}
             <div className="lg:hidden flex items-center gap-2 rtl:space-x-reverse">
               <LanguageSwitcher />
-              <ThemeToggle />
               <Button
                 variant="outline"
                 size="icon"

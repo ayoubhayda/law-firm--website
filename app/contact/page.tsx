@@ -161,7 +161,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form and Info Section - Cream Background */}
-        <section className="py-16 lg:py-24 bg-cream">
+        <section className="py-16 lg:py-24 bg-premium">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Contact Form */}
