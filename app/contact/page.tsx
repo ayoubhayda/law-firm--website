@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
-import { BookingModal } from "@/components/booking-modal";
+import { ConsultationModal } from "@/components/consultation-modal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -36,6 +36,7 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -465,7 +466,7 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-3">
                     <Button
-                      onClick={() => setIsBookingModalOpen(true)}
+                      onClick={() => setIsConsultationModalOpen(true)}
                       className="w-full h-12 bg-accent text-accent-foreground hover:bg-accent/90 font-medium cursor-pointer tracking-wide uppercase"
                     >
                       <Calendar className="me-2 h-5 w-5" />
@@ -489,9 +490,9 @@ export default function ContactPage() {
       </main>
       <Footer />
       <WhatsAppButton />
-      <BookingModal
-        isOpen={isBookingModalOpen}
-        onClose={() => setIsBookingModalOpen(false)}
+      <ConsultationModal
+        isOpen={isConsultationModalOpen}
+        onClose={() => setIsConsultationModalOpen(false)}
       />
     </div>
   );

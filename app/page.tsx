@@ -37,7 +37,6 @@ export default function HomePage() {
         <CTASection />
       </main>
       <Footer />
-      <WhatsAppButton />
     </div>
   );
 }

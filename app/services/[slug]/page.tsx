@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getServiceBySlug, getRelatedServices } from "@/lib/services";
-import { ServiceConsultationModal } from "@/components/service-consultation-modal";
+import { ConsultationModal } from "@/components/consultation-modal";
 import { useState, use } from "react";
 import { motion } from "framer-motion";
 
@@ -497,10 +497,9 @@ export default function ServicePage({ params }: ServicePageProps) {
       <Footer />
       <WhatsAppButton />
 
-      <ServiceConsultationModal
+      <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
-        serviceName={service.title[locale]}
       />
     </div>
   );

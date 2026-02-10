@@ -2,40 +2,42 @@
 @import "tw-animate-css";
 
 :root {
-  /* Premium Dark Theme - Elegant Gold & Deep Black */
-  --background: #0a0a0c; /* Deep black with subtle blue undertone */
-  --foreground: #f5f5f7; /* Off-white text */
-  --card: #111118; /* Charcoal for cards */
-  --card-foreground: #f5f5f7;
-  --popover: #111118;
-  --popover-foreground: #f5f5f7;
-  --primary: #f5f5f7; /* Off-white primary */
-  --primary-foreground: #0a0a0c;
-  --secondary: #c9a962; /* Elegant gold accent */
-  --secondary-foreground: #0a0a0c;
-  --muted: #1a1a20; /* Muted dark */
-  --muted-foreground: #9b9b9b; /* Muted gray text */
-  --accent: #c9a962; /* Gold accent */
-  --accent-foreground: #0a0a0c;
+  /* Premium Dark Navy Theme - Elegant Gold & Creamy White */
+  --background: #031E33; /* Deep navy blue */
+  --foreground: #F5F0E8; /* Creamy white text */
+  --card: #042a47; /* Slightly lighter navy for cards */
+  --card-foreground: #F5F0E8;
+  --popover: #042a47;
+  --popover-foreground: #F5F0E8;
+  --primary: #F5F0E8; /* Creamy white primary */
+  --primary-foreground: #031E33;
+  --secondary: #DFC4A0; /* Elegant gold/tan accent */
+  --secondary-foreground: #031E33;
+  --muted: #062840; /* Muted navy */
+  --muted-foreground: #8fa8bf; /* Soft blue-gray text */
+  --accent: #DFC4A0; /* Gold/tan accent */
+  --accent-foreground: #031E33;
   --destructive: #ef4444;
-  --destructive-foreground: #f5f5f7;
-  --border: #2a2a30; /* Subtle dark border */
-  --input: #1a1a20;
-  --ring: rgba(201, 169, 98, 0.5); /* Gold ring with transparency */
-  --chart-1: #c9a962;
-  --chart-2: #f5f5f7;
-  --chart-3: #1a1a20;
-  --chart-4: #d4b878;
-  --chart-5: #9b9b9b;
+  --destructive-foreground: #F5F0E8;
+  --border: #0d3a5c; /* Subtle navy border */
+  --input: #062840;
+  --ring: rgba(223, 196, 160, 0.5); /* Gold ring with transparency */
+  --chart-1: #DFC4A0;
+  --chart-2: #F5F0E8;
+  --chart-3: #062840;
+  --chart-4: #e8d4b8;
+  --chart-5: #8fa8bf;
   --radius: 0.25rem;
-  --sidebar: #0a0a0c;
-  --sidebar-foreground: #f5f5f7;
-  --sidebar-primary: #c9a962;
-  --sidebar-primary-foreground: #0a0a0c;
-  --sidebar-accent: #c9a962;
-  --sidebar-accent-foreground: #0a0a0c;
-  --sidebar-border: #2a2a30;
-  --sidebar-ring: rgba(201, 169, 98, 0.5);
+  --premium: #f5f0e8; /* Warm cream for light sections */
+  --premium-foreground: #031E33;
+  --sidebar: #031E33;
+  --sidebar-foreground: #F5F0E8;
+  --sidebar-primary: #DFC4A0;
+  --sidebar-primary-foreground: #031E33;
+  --sidebar-accent: #DFC4A0;
+  --sidebar-accent-foreground: #031E33;
+  --sidebar-border: #0d3a5c;
+  --sidebar-ring: rgba(223, 196, 160, 0.5);
 }
 
 @theme inline {
@@ -68,6 +70,8 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-premium: var(--premium);
+  --color-premium-foreground: var(--premium-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

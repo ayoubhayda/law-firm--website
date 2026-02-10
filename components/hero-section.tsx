@@ -15,7 +15,7 @@ import { useLocale } from "@/hooks/use-locale-context";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ServiceConsultationModal } from "./service-consultation-modal";
+import { ConsultationModal } from "./consultation-modal";
 
 export function HeroSection() {
   const { locale } = useLocale();
@@ -41,8 +41,6 @@ export function HeroSection() {
             <div className="relative">
               {/* Decorative elements */}
               <div className="absolute -top-4 -start-4 w-24 h-24 border border-accent/30 rounded-full"></div>
-              <div className="absolute -bottom-4 -end-4 w-32 h-32 border border-accent/20 rounded-full"></div>
-
               {/* Lawyer Image */}
               <div className="relative w-64 sm:w-80 lg:w-96 xl:w-[420px]">
                 <div className="relative overflow-hidden">
@@ -57,7 +55,7 @@ export function HeroSection() {
                     className="w-full h-auto object-cover hidden rtl:block"
                   />
                   {/* Gradient Overlay at Bottom */}
-                  <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-background to-transparent"></div>
+                  <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-background to-transparent"></div>
                 </div>
               </div>
             </div>
@@ -158,10 +156,9 @@ export function HeroSection() {
         </div>
       </div>
 
-      <ServiceConsultationModal
+      <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
-        serviceName={""}
       />
 
       {/* CSS for scrollbar and animations */}

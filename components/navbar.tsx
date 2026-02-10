@@ -9,9 +9,9 @@ import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { ServiceConsultationModal } from "./service-consultation-modal";
+import { ConsultationModal } from "./consultation-modal";
 import Image from "next/image";
-import Logo from "@/assets/logos/FIRMEN-LOGO-GOLD.png";
+import Logo from "@/assets/logos/FIRMEN-LOGO.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,15 +74,6 @@ export function Navbar() {
                     )}
                   >
                     {item.name}
-                    {/* Underline effect */}
-                    <span
-                      className={cn(
-                        "absolute bottom-0 start-4 end-4 h-0.5 bg-accent transition-transform duration-300 origin-start",
-                        isActiveRoute(item.href)
-                          ? "scale-x-100"
-                          : "scale-x-0 group-hover:scale-x-100",
-                      )}
-                    ></span>
                   </Link>
                 ))}
               </div>
@@ -103,10 +94,9 @@ export function Navbar() {
             <div className="lg:hidden flex items-center gap-2 rtl:space-x-reverse">
               <LanguageSwitcher />
               <Button
-                variant="ghost"
-                size="icon"
+                variant="outline"
+                className="bg-transparent border-border/50 dark:border-zinc-700 hover:border-accent/50 hover:bg-accent/5 dark:hover:bg-accent/20 dark:hover:text-white dark:hover:border-accent/30 cursor-pointer transition-all duration-200 shadow-none"
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-foreground hover:text-accent hover:bg-accent/10 cursor-pointer transition-all duration-200"
               >
                 {isOpen ? (
                   <X className="h-5 w-5" />
@@ -153,10 +143,9 @@ export function Navbar() {
           )}
         </div>
       </nav>
-      <ServiceConsultationModal
+      <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
-        serviceName={""}
       />
     </>
   );

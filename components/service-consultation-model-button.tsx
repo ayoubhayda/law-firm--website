@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/hooks/use-locale-context";
 import { useConsultationModal } from "@/hooks/use-consultation-modal";
-import { ServiceConsultationModal } from "./service-consultation-modal";
+import { ConsultationModal } from "./consultation-modal";
 import { Phone } from "lucide-react";
 
 export default function ServiceConsultationModelButton() {
@@ -30,7 +30,7 @@ export default function ServiceConsultationModelButton() {
           {locale === "ar" ? "اتصل الآن" : "Call Now"}
         </a>
       </Button>
-      <ServiceConsultationModal isOpen={isOpen} onClose={closeModal} />
+      <ConsultationModal isOpen={isOpen} onClose={closeModal} />
     </>
   );
 }

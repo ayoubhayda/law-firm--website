@@ -4,211 +4,203 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useLocale } from "@/hooks/use-locale-context";
-import { Phone, Mail, Clock, Send } from "lucide-react";
-import { useState } from "react";
+import {
+  Send,
+  CheckCircle2,
+  Loader2,
+  User,
+  Mail,
+  Phone,
+  MessageSquare,
+} from "lucide-react";
+import { useState, useRef } from "react";
 
 interface ConsultationModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
   const { locale } = useLocale();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    setStatus("submitting");
+    setErrorMessage("");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+    };
 
-    setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send");
+      }
+
+      setStatus("success");
+      formRef.current?.reset();
+
+      // Auto-close after 2.5s
+      setTimeout(() => {
+        handleClose();
+      }, 2500);
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        locale === "ar"
+          ? "حدث خطأ أثناء الإرسال. حاول مرة أخرى."
+          : "Something went wrong. Please try again.",
+      );
+    }
+  };
+
+  const handleClose = () => {
+    setStatus("idle");
+    setErrorMessage("");
+    formRef.current?.reset();
     onClose();
   };
 
-  const serviceOptions = [
-    { value: "family-law", labelAr: "قانون الأسرة", labelEn: "Family Law" },
-    { value: "real-estate", labelAr: "العقارات", labelEn: "Real Estate" },
-    {
-      value: "business-law",
-      labelAr: "القانون التجاري",
-      labelEn: "Business Law",
-    },
-    {
-      value: "criminal-defense",
-      labelAr: "الدفاع الجنائي",
-      labelEn: "Criminal Defense",
-    },
-    {
-      value: "contract-drafting",
-      labelAr: "صياغة العقود",
-      labelEn: "Contract Drafting",
-    },
-    {
-      value: "litigation",
-      labelAr: "التقاضي والتحكيم",
-      labelEn: "Litigation & Arbitration",
-    },
-  ];
+  const isAr = locale === "ar";
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-serif">
-            {locale === "ar"
-              ? "احجز استشارة مجانية"
-              : "Book a Free Consultation"}
+    <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
+      <DialogContent className="sm:max-w-[440px] max-w-[calc(100vw-2rem)] p-0 gap-0 overflow-hidden border-border/50">
+        {/* Header */}
+        <DialogHeader className="px-6 pt-6 pb-4">
+          <DialogTitle className="text-xl font-serif tracking-tight">
+            {isAr ? "طلب استشارة" : "Request a Consultation"}
           </DialogTitle>
-          <DialogDescription>
-            {locale === "ar"
-              ? "املأ النموذج أدناه وسنتواصل معك في أقرب وقت"
-              : "Fill out the form below and we'll contact you shortly"}
-          </DialogDescription>
+          <p className="text-sm text-muted-foreground mt-1">
+            {isAr
+              ? "أرسل لنا رسالتك وسنتواصل معك قريباً"
+              : "Send us a message and we'll get back to you shortly"}
+          </p>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-          {/* Name Field */}
-          <div className="space-y-2">
-            <Label htmlFor="name">
-              {locale === "ar" ? "الاسم الكامل" : "Full Name"}
-            </Label>
-            <Input
-              id="name"
-              name="name"
-              required
-              placeholder={locale === "ar" ? "أدخل اسمك" : "Enter your name"}
-            />
-          </div>
-
-          {/* Phone Field */}
-          <div className="space-y-2">
-            <Label htmlFor="phone">
-              {locale === "ar" ? "رقم الهاتف" : "Phone Number"}
-            </Label>
-            <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              required
-              placeholder={
-                locale === "ar" ? "أدخل رقم هاتفك" : "Enter your phone"
-              }
-            />
-          </div>
-
-          {/* Email Field */}
-          <div className="space-y-2">
-            <Label htmlFor="email">
-              {locale === "ar" ? "البريد الإلكتروني" : "Email"}
-            </Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              required
-              placeholder={
-                locale === "ar" ? "أدخل بريدك الإلكتروني" : "Enter your email"
-              }
-            />
-          </div>
-
-          {/* Service Selection */}
-          <div className="space-y-2">
-            <Label>
-              {locale === "ar" ? "الخدمة المطلوبة" : "Required Service"}
-            </Label>
-            <Select name="service" required>
-              <SelectTrigger>
-                <SelectValue
-                  placeholder={
-                    locale === "ar" ? "اختر الخدمة" : "Select a service"
-                  }
-                />
-              </SelectTrigger>
-              <SelectContent>
-                {serviceOptions.map((service) => (
-                  <SelectItem key={service.value} value={service.value}>
-                    {locale === "ar" ? service.labelAr : service.labelEn}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Message Field */}
-          <div className="space-y-2">
-            <Label htmlFor="message">
-              {locale === "ar" ? "تفاصيل الاستشارة" : "Consultation Details"}
-            </Label>
-            <Textarea
-              id="message"
-              name="message"
-              rows={4}
-              placeholder={
-                locale === "ar"
-                  ? "اكتب تفاصيل قضيتك أو استفسارك..."
-                  : "Describe your case or inquiry..."
-              }
-            />
-          </div>
-
-          {/* Contact Info */}
-          <div className="bg-muted/50 p-4 rounded-lg space-y-2 text-sm">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Phone className="h-4 w-4 text-accent" />
-              <span>+966 50 123 4567</span>
+        {/* Success State */}
+        {status === "success" ? (
+          <div className="px-6 pb-8 pt-4 flex flex-col items-center text-center gap-3">
+            <div className="w-14 h-14 rounded-full bg-accent/15 flex items-center justify-center">
+              <CheckCircle2 className="w-7 h-7 text-accent" />
             </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Mail className="h-4 w-4 text-accent" />
-              <span>info@adlex-law.com</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Clock className="h-4 w-4 text-accent" />
-              <span>
-                {locale === "ar"
-                  ? "نرد خلال 24 ساعة"
-                  : "We respond within 24 hours"}
-              </span>
+            <div>
+              <h3 className="font-serif text-lg font-semibold">
+                {isAr ? "تم الإرسال بنجاح" : "Message Sent!"}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                {isAr
+                  ? "شكراً لك. سنتواصل معك في أقرب وقت."
+                  : "Thank you. We'll be in touch soon."}
+              </p>
             </div>
           </div>
-
-          {/* Submit Button */}
-          <Button
-            type="submit"
-            className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
-            disabled={isSubmitting}
+        ) : (
+          /* Form */
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="px-6 pb-6 space-y-3.5"
           >
-            {isSubmitting ? (
-              locale === "ar" ? (
-                "جاري الإرسال..."
-              ) : (
-                "Sending..."
-              )
-            ) : (
-              <>
-                <Send className="h-4 w-4 me-2" />
-                {locale === "ar" ? "إرسال الطلب" : "Send Request"}
-              </>
+            {/* Name */}
+            <div className="relative">
+              <User className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/60" />
+              <Input
+                name="name"
+                required
+                placeholder={isAr ? "الاسم الكامل" : "Full name"}
+                className="ps-9 h-11 bg-muted/40 border-border/50 focus-visible:bg-background transition-colors"
+              />
+            </div>
+
+            {/* Email */}
+            <div className="relative">
+              <Mail className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/60" />
+              <Input
+                name="email"
+                type="email"
+                required
+                placeholder={isAr ? "البريد الإلكتروني" : "Email address"}
+                className="ps-9 h-11 bg-muted/40 border-border/50 focus-visible:bg-background transition-colors"
+              />
+            </div>
+
+            {/* Phone */}
+            <div className="relative">
+              <Phone className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/60" />
+              <Input
+                name="phone"
+                type="tel"
+                required
+                placeholder={isAr ? "رقم الهاتف" : "Phone number"}
+                className="ps-9 h-11 bg-muted/40 border-border/50 focus-visible:bg-background transition-colors"
+              />
+            </div>
+
+            {/* Message */}
+            <div className="relative">
+              <MessageSquare className="absolute start-3 top-3 h-4 w-4 text-muted-foreground/60" />
+              <Textarea
+                name="message"
+                required
+                rows={2}
+                placeholder={
+                  isAr
+                    ? "اكتب رسالتك باختصار..."
+                    : "Briefly describe your inquiry..."
+                }
+                className="ps-9 min-h-[72px] bg-muted/40 border-border/50 focus-visible:bg-background transition-colors resize-none"
+              />
+            </div>
+
+            {/* Error */}
+            {status === "error" && (
+              <p className="text-sm text-destructive text-center">
+                {errorMessage}
+              </p>
             )}
-          </Button>
-        </form>
+
+            {/* Submit */}
+            <Button
+              type="submit"
+              className="w-full h-11 bg-accent text-accent-foreground hover:bg-accent/90 font-medium tracking-wide cursor-pointer"
+              disabled={status === "submitting"}
+            >
+              {status === "submitting" ? (
+                <>
+                  <Loader2 className="h-4 w-4 me-2 animate-spin" />
+                  {isAr ? "جاري الإرسال..." : "Sending..."}
+                </>
+              ) : (
+                <>
+                  <Send className="h-4 w-4 me-2" />
+                  {isAr ? "إرسال الرسالة" : "Send Message"}
+                </>
+              )}
+            </Button>
+          </form>
+        )}
       </DialogContent>
     </Dialog>
   );
