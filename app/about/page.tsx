@@ -15,10 +15,8 @@ import {
   Handshake,
   ArrowRight,
   ArrowLeft,
-  CheckCircle,
 } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
-import { getTranslation } from "@/lib/i18n";
 import ServiceConsultationModelButton from "@/components/service-consultation-model-button";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -118,19 +116,9 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="relative py-20 lg:py-28 overflow-hidden bg-background">
-          {/* Background Image with Overlay */}
-          <div className="absolute inset-0">
-            <img
-              src="/elegant-law-office-banner.webp"
-              alt="Law Office Interior"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
-          {/* Content */}
+        {/* Hero Section - Dark with grid, no background image */}
+        <section className="relative py-24 lg:py-32 overflow-hidden bg-background grid-pattern">
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none"></div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center max-w-3xl mx-auto"
@@ -138,20 +126,26 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-px w-12 bg-accent"></div>
+                <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
+                  {locale === "ar" ? "من نحن" : "About Us"}
+                </span>
+                <div className="h-px w-12 bg-accent"></div>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
                 {locale === "ar" ? (
                   <>
-                    تعرف على{" "}
-                    <span className="text-accent italic">قصة نجاحنا</span>
+                    تعرف على <span className="text-accent">قصة نجاحنا</span>
                   </>
                 ) : (
                   <>
-                    DISCOVER OUR{" "}
-                    <span className="text-accent italic">SUCCESS STORY</span>
+                    Discover Our{" "}
+                    <span className="text-accent">Success Story</span>
                   </>
                 )}
               </h1>
-              <p className="text-white/80 text-base lg:text-lg leading-relaxed">
+              <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
                 {locale === "ar"
                   ? "تعرف على قصة نجاحنا وخبرتنا في تقديم أفضل الخدمات القانونية"
                   : "Learn about our success story and expertise in providing the best legal services"}
@@ -184,7 +178,7 @@ export default function AboutPage() {
 
                 {/* Floating Stats Card */}
                 <motion.div
-                  className="absolute -bottom-6 -end-6 bg-background p-6 border border-border"
+                  className="absolute -bottom-6 -end-6 bg-[#0a1628] p-6 border border-border"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -193,7 +187,7 @@ export default function AboutPage() {
                   <div className="text-4xl font-serif font-bold text-accent mb-1">
                     15+
                   </div>
-                  <div className="text-foreground text-sm font-medium">
+                  <div className="text-white text-sm font-medium">
                     {locale === "ar" ? "سنوات خبرة" : "Years Experience"}
                   </div>
                 </motion.div>
@@ -217,20 +211,20 @@ export default function AboutPage() {
                 </div>
 
                 {/* Title */}
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0a1628] mb-6 leading-tight">
                   {locale === "ar"
                     ? "خبرة قانونية متميزة"
-                    : "DISTINGUISHED LEGAL EXPERTISE"}
+                    : "Distinguished Legal Expertise"}
                 </h2>
 
                 {/* Description */}
-                <p className="text-muted-foreground text-base lg:text-lg mb-6 leading-relaxed">
+                <p className="text-[#0a1628]/70 text-base lg:text-lg mb-6 leading-relaxed">
                   {locale === "ar"
                     ? "بخبرة تزيد عن 15 عاماً في الممارسة القانونية، أقدم خدمات قانونية شاملة ومتخصصة في مختلف المجالات القانونية. حصلت على درجة البكالوريوس في الحقوق من جامعة الملك سعود بامتياز مع مرتبة الشرف."
                     : "With over 15 years of legal practice experience, I provide comprehensive and specialized legal services across various legal fields. I earned my Bachelor's degree in Law from King Saud University with honors."}
                 </p>
 
-                <p className="text-muted-foreground text-sm lg:text-base mb-8 leading-relaxed">
+                <p className="text-[#0a1628]/60 text-sm lg:text-base mb-8 leading-relaxed">
                   {locale === "ar"
                     ? "أؤمن بأن كل عميل يستحق أفضل تمثيل قانوني ممكن، ولذلك أعمل بجد لفهم احتياجات كل عميل وتقديم حلول قانونية مبتكرة ومخصصة."
                     : "I believe every client deserves the best possible legal representation, which is why I work diligently to understand each client's needs and provide innovative, customized legal solutions."}
@@ -241,7 +235,7 @@ export default function AboutPage() {
                   {achievements.slice(1, 3).map((achievement, index) => (
                     <motion.div
                       key={index}
-                      className="text-center p-4 border border-border bg-background"
+                      className="text-center p-4 border border-[#0a1628]/10 bg-white"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -250,7 +244,7 @@ export default function AboutPage() {
                       <div className="text-2xl lg:text-3xl font-serif font-bold text-accent mb-1">
                         {achievement.number}
                       </div>
-                      <div className="text-muted-foreground text-sm">
+                      <div className="text-[#0a1628]/60 text-sm">
                         {achievement.label}
                       </div>
                     </motion.div>
@@ -262,7 +256,7 @@ export default function AboutPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-foreground text-foreground hover:bg-foreground hover:text-background bg-transparent font-medium transition-all duration-300 cursor-pointer tracking-wide uppercase"
+                    className="border-[#0a1628] text-[#0a1628] hover:bg-[#0a1628] hover:text-white bg-transparent font-medium transition-all duration-300 cursor-pointer tracking-wide"
                   >
                     {locale === "ar" ? "تواصل معنا" : "Contact Us"}
                     <ArrowIcon className="ms-2 h-4 w-4" />
@@ -274,7 +268,7 @@ export default function AboutPage() {
         </section>
 
         {/* Timeline Section - Dark Background */}
-        <section className="py-16 lg:py-24 bg-background">
+        <section className="py-16 lg:py-24 bg-background grid-pattern">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Section Header */}
             <motion.div
@@ -285,16 +279,16 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="h-px w-8 bg-accent"></div>
+                <div className="h-px w-12 bg-accent"></div>
                 <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
                   {locale === "ar"
                     ? "مسيرة مهنية متميزة"
                     : "Distinguished Career Path"}
                 </span>
-                <div className="h-px w-8 bg-accent"></div>
+                <div className="h-px w-12 bg-accent"></div>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
-                {locale === "ar" ? "مسيرة النجاح" : "JOURNEY OF SUCCESS"}
+                {locale === "ar" ? "مسيرة النجاح" : "Journey of Success"}
               </h2>
               <p className="text-muted-foreground text-base max-w-2xl mx-auto">
                 {locale === "ar"
@@ -308,7 +302,7 @@ export default function AboutPage() {
               {milestones.map((milestone, index) => (
                 <motion.div
                   key={index}
-                  className="group p-6 border border-border hover:border-accent/50 transition-all duration-300"
+                  className="group p-6 border border-border bg-card/50 hover:border-accent/50 transition-all duration-300"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -320,7 +314,7 @@ export default function AboutPage() {
                   </div>
 
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
                     <milestone.icon className="w-6 h-6 text-accent" />
                   </div>
 
@@ -350,10 +344,10 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
-                {locale === "ar" ? "قيمنا الأساسية" : "OUR CORE VALUES"}
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0a1628] mb-4">
+                {locale === "ar" ? "قيمنا الأساسية" : "Our Core Values"}
               </h2>
-              <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+              <p className="text-[#0a1628]/60 text-base max-w-2xl mx-auto">
                 {locale === "ar"
                   ? "القيم التي نؤمن بها وتوجه عملنا في تقديم أفضل الخدمات القانونية"
                   : "The values we believe in and that guide our work in providing the best legal services"}
@@ -365,24 +359,24 @@ export default function AboutPage() {
               {values.map((value, index) => (
                 <motion.div
                   key={index}
-                  className="group p-6 lg:p-8 bg-background border border-border hover:border-accent/50 transition-all duration-300 text-center"
+                  className="group p-6 lg:p-8 bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 text-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-accent/20 transition-colors duration-300">
+                  <div className="w-14 h-14 bg-[#0a1628] flex items-center justify-center mx-auto mb-5">
                     <value.icon className="w-7 h-7 text-accent" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-serif font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="text-lg font-serif font-bold text-[#0a1628] mb-3 group-hover:text-accent transition-colors duration-300">
                     {value.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-[#0a1628]/60 text-sm leading-relaxed">
                     {value.description}
                   </p>
                 </motion.div>

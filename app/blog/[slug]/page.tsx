@@ -5,8 +5,6 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import {
   Calendar,
   Clock,
@@ -33,28 +31,13 @@ export default function ArticlePage() {
   const BackIcon = locale === "ar" ? ArrowRight : ArrowLeft;
   const ForwardIcon = locale === "ar" ? ArrowLeft : ArrowRight;
 
-  // Animation variants
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" },
-  };
-
   if (!article) {
     return (
       <div className="min-h-screen bg-background">
         <Navbar />
         <main className="py-20">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-3xl font-bold mb-4">
+            <h1 className="text-3xl font-bold mb-4 text-foreground">
               {locale === "ar" ? "المقال غير موجود" : "Article Not Found"}
             </h1>
             <p className="text-muted-foreground mb-8">
@@ -63,8 +46,8 @@ export default function ArticlePage() {
                 : "The requested article is not available"}
             </p>
             <Link href="/blog">
-              <Button>
-                <BackIcon className="ml-2 h-4 w-4" />
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <BackIcon className="me-2 h-4 w-4" />
                 {locale === "ar" ? "العودة للمدونة" : "Back to Blog"}
               </Button>
             </Link>
@@ -95,8 +78,8 @@ export default function ArticlePage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Article Header */}
-        <section className="py-12 bg-background">
+        {/* Article Header - Dark Background */}
+        <section className="py-12 lg:py-16 bg-background grid-pattern">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -106,9 +89,9 @@ export default function ArticlePage() {
               <Link href="/blog">
                 <Button
                   variant="ghost"
-                  className="mb-6 text-accent hover:text-white hover:bg-accent"
+                  className="mb-6 text-accent hover:text-accent-foreground hover:bg-accent"
                 >
-                  <BackIcon className="ml-2 h-4 w-4" />
+                  <BackIcon className="me-2 h-4 w-4" />
                   {locale === "ar" ? "العودة للمدونة" : "Back to Blog"}
                 </Button>
               </Link>
@@ -116,99 +99,81 @@ export default function ArticlePage() {
 
             <motion.div
               className="space-y-6"
-              variants={staggerContainer}
-              initial="initial"
-              animate="animate"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <motion.div variants={fadeInUp}>
-                <Badge className="bg-accent text-white hover:bg-accent">
-                  {article.categoryName}
-                </Badge>
-              </motion.div>
+              <span className="inline-flex items-center px-3 py-1 bg-accent text-accent-foreground text-xs font-medium">
+                {article.categoryName}
+              </span>
 
-              <motion.h1
-                className="text-4xl md:text-5xl font-bold font-serif text-balance leading-tight"
-                variants={fadeInUp}
-              >
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-foreground text-balance leading-tight">
                 {locale === "ar" ? article.titleAr : article.titleEn}
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                className="text-xl text-muted-foreground leading-relaxed text-pretty"
-                variants={fadeInUp}
-              >
+              <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
                 {locale === "ar" ? article.excerptAr : article.excerptEn}
-              </motion.p>
+              </p>
 
-              <motion.div
-                className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground"
-                variants={fadeInUp}
-              >
+              <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
                 <div className="flex items-center gap-2">
-                  <User className="h-4 w-4" />
+                  <User className="h-4 w-4 text-accent" />
                   {locale === "ar" ? article.authorAr : article.authorEn}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-4 w-4 text-accent" />
                   {formatDate(article.date)}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
+                  <Clock className="h-4 w-4 text-accent" />
                   {locale === "ar" ? article.readTimeAr : article.readTimeEn}
                 </div>
                 <div className="flex items-center gap-2">
-                  <BookOpen className="h-4 w-4" />
+                  <BookOpen className="h-4 w-4 text-accent" />
                   {locale === "ar"
                     ? `${article.content.ar.length} كلمة`
                     : `${article.content.en.length} words`}
                 </div>
-              </motion.div>
+              </div>
 
-              <motion.div
-                className="flex items-center gap-4"
-                variants={fadeInUp}
-              >
+              <div className="flex items-center gap-4">
                 <Button
                   size="sm"
-                  className="bg-accent text-white hover:bg-accent/90 hover:text-white"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90"
                 >
-                  <Share2 className="ml-2 h-4 w-4" />
+                  <Share2 className="me-2 h-4 w-4" />
                   {locale === "ar" ? "مشاركة" : "Share"}
                 </Button>
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Article Image */}
+        {/* Article Image - Cream Background */}
         {article.image && (
-          <section className="py-8">
+          <section className="py-8 bg-premium">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="overflow-hidden rounded-lg"
+                className="overflow-hidden"
               >
-                <motion.img
+                <img
                   src={article.image || "/placeholder.svg"}
                   alt={locale === "ar" ? article.titleAr : article.titleEn}
-                  className="w-full h-64 md:h-96 object-cover rounded-lg shadow-lg"
-                  initial={{ scale: 1.1 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.2 }}
+                  className="w-full h-64 md:h-96 object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
               </motion.div>
             </div>
           </section>
         )}
 
-        {/* Article Content */}
-        <section className="py-12">
+        {/* Article Content - Cream Background */}
+        <section className="py-12 bg-premium">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-lg max-w-none dark:prose-invert prose-headings:font-serif prose-headings:text-foreground prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-ul:text-muted-foreground prose-ol:text-muted-foreground">
+            <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#0a1628] prose-p:text-[#0a1628]/70 prose-p:leading-relaxed prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-[#0a1628] prose-ul:text-[#0a1628]/70 prose-ol:text-[#0a1628]/70">
               <div
                 dangerouslySetInnerHTML={{
                   __html:
@@ -219,62 +184,82 @@ export default function ArticlePage() {
           </div>
         </section>
 
-        <Separator className="my-12" />
-
-        {/* Related Articles */}
+        {/* Related Articles - Dark Background */}
         {relatedArticles.length > 0 && (
-          <section className="py-12">
+          <section className="py-12 lg:py-16 bg-background grid-pattern">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold font-serif mb-8 text-center">
-                {locale === "ar" ? "مقالات ذات صلة" : "Related Articles"}
-              </h2>
+              <motion.div
+                className="text-center mb-10"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="h-px w-12 bg-accent"></div>
+                  <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
+                    {locale === "ar" ? "مقالات ذات صلة" : "Related Articles"}
+                  </span>
+                  <div className="h-px w-12 bg-accent"></div>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold font-serif text-foreground">
+                  {locale === "ar" ? "اقرأ أيضاً" : "Read Also"}
+                </h2>
+              </motion.div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {relatedArticles.map((relatedArticle) => (
-                  <Link
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                {relatedArticles.map((relatedArticle, index) => (
+                  <motion.div
                     key={relatedArticle.slug}
-                    href={`/blog/${relatedArticle.slug}`}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <div className="group cursor-pointer">
-                      <div className="relative overflow-hidden rounded-lg mb-4">
-                        <img
-                          src={relatedArticle.image || "/placeholder.svg"}
-                          alt={
-                            locale === "ar"
+                    <Link href={`/blog/${relatedArticle.slug}`}>
+                      <div className="group cursor-pointer border border-border bg-card/50 hover:border-accent/50 transition-all duration-300 overflow-hidden">
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={relatedArticle.image || "/placeholder.svg"}
+                            alt={
+                              locale === "ar"
+                                ? relatedArticle.titleAr
+                                : relatedArticle.titleEn
+                            }
+                            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500 grayscale group-hover:grayscale-0"
+                          />
+                          <div className="absolute top-4 start-4">
+                            <span className="inline-flex items-center px-3 py-1 bg-accent text-accent-foreground text-xs font-medium">
+                              {relatedArticle.categoryName}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="p-5">
+                          <h3 className="text-lg font-serif font-bold text-foreground mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                            {locale === "ar"
                               ? relatedArticle.titleAr
-                              : relatedArticle.titleEn
-                          }
-                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
-                          <Badge className="bg-accent text-white">
-                            {relatedArticle.categoryName}
-                          </Badge>
+                              : relatedArticle.titleEn}
+                          </h3>
+
+                          <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
+                            {locale === "ar"
+                              ? relatedArticle.excerptAr
+                              : relatedArticle.excerptEn}
+                          </p>
+
+                          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                            <span>{formatDate(relatedArticle.date)}</span>
+                            <span>
+                              {locale === "ar"
+                                ? relatedArticle.readTimeAr
+                                : relatedArticle.readTimeEn}
+                            </span>
+                          </div>
                         </div>
                       </div>
-
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300 line-clamp-2">
-                        {locale === "ar"
-                          ? relatedArticle.titleAr
-                          : relatedArticle.titleEn}
-                      </h3>
-
-                      <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
-                        {locale === "ar"
-                          ? relatedArticle.excerptAr
-                          : relatedArticle.excerptEn}
-                      </p>
-
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <span>{formatDate(relatedArticle.date)}</span>
-                        <span>
-                          {locale === "ar"
-                            ? relatedArticle.readTimeAr
-                            : relatedArticle.readTimeEn}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -300,14 +285,7 @@ export default function ArticlePage() {
                 ? "احصل على استشارة قانونية متخصصة من خبرائنا لحل مشاكلك القانونية"
                 : "Get specialized legal consultation from our experts to solve your legal problems"}
             </p>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-            >
-              <ServiceConsultationModelButton />
-            </motion.div>
+            <ServiceConsultationModelButton />
           </motion.div>
         </section>
       </main>

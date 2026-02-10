@@ -111,19 +111,9 @@ export default function BlogPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="relative py-20 lg:py-28 overflow-hidden bg-background">
-          {/* Background Image with Overlay */}
-          <div className="absolute inset-0">
-            <img
-              src="/elegant-law-office-banner.webp"
-              alt="Legal Blog Background"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
-          {/* Content */}
+        {/* Hero Section - Dark with grid pattern, NO background image */}
+        <section className="relative py-24 lg:py-32 overflow-hidden bg-background grid-pattern">
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none"></div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center max-w-3xl mx-auto"
@@ -131,19 +121,25 @@ export default function BlogPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-px w-12 bg-accent"></div>
+                <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
+                  {locale === "ar" ? "المدونة القانونية" : "Legal Blog"}
+                </span>
+                <div className="h-px w-12 bg-accent"></div>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
                 {locale === "ar" ? (
                   <>
-                    المدونة{" "}
-                    <span className="text-accent italic">القانونية</span>
+                    المدونة <span className="text-accent">القانونية</span>
                   </>
                 ) : (
                   <>
-                    LEGAL <span className="text-accent italic">BLOG</span>
+                    LEGAL <span className="text-accent">BLOG</span>
                   </>
                 )}
               </h1>
-              <p className="text-white/80 text-base lg:text-lg leading-relaxed">
+              <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
                 {locale === "ar"
                   ? "مقالات ونصائح قانونية متخصصة لمساعدتكم في فهم القوانين والإجراءات القانونية"
                   : "Specialized legal articles and tips to help you understand laws and legal procedures"}
@@ -163,10 +159,10 @@ export default function BlogPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0a1628] mb-4">
                 {locale === "ar" ? "مقالاتنا القانونية" : "OUR LEGAL ARTICLES"}
               </h2>
-              <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+              <p className="text-[#0a1628]/60 text-base max-w-2xl mx-auto">
                 {locale === "ar"
                   ? "اكتشف مجموعة واسعة من المقالات القانونية المتخصصة وابحث عن ما يهمك"
                   : "Discover a wide range of specialized legal articles and find what interests you"}
@@ -178,7 +174,7 @@ export default function BlogPage() {
               <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
                 {/* Search */}
                 <div className="relative flex-1 max-w-md w-full">
-                  <Search className="absolute left-3 rtl:left-auto rtl:right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+                  <Search className="absolute left-3 rtl:left-auto rtl:right-3 top-1/2 transform -translate-y-1/2 text-[#0a1628]/40 h-4 w-4" />
                   <Input
                     type="text"
                     placeholder={
@@ -188,7 +184,7 @@ export default function BlogPage() {
                     }
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="ps-10 h-12 bg-background border-border focus:border-accent"
+                    className="ps-10 h-12 bg-white border-gray-200 focus:border-accent text-[#0a1628]"
                   />
                 </div>
 
@@ -205,7 +201,7 @@ export default function BlogPage() {
                       className={
                         selectedCategory === category.id
                           ? "bg-accent text-accent-foreground hover:bg-accent/90 cursor-pointer"
-                          : "border-border text-foreground hover:border-accent/50 hover:text-accent bg-background cursor-pointer"
+                          : "border-gray-200 text-[#0a1628] hover:border-accent/50 hover:text-accent bg-white cursor-pointer"
                       }
                     >
                       {category.name}
@@ -218,7 +214,7 @@ export default function BlogPage() {
             {/* Results Count */}
             <div className="mb-8">
               <div className="flex items-center justify-between">
-                <div className="text-sm text-muted-foreground">
+                <div className="text-sm text-[#0a1628]/60">
                   {filteredPosts.length > 0 ? (
                     <span>
                       {locale === "ar"
@@ -239,7 +235,7 @@ export default function BlogPage() {
                       setSearchTerm("");
                       setSelectedCategory("all");
                     }}
-                    className="text-muted-foreground hover:text-foreground"
+                    className="text-[#0a1628]/60 hover:text-[#0a1628]"
                   >
                     {locale === "ar" ? "مسح الفلاتر" : "Clear Filters"}
                   </Button>
@@ -250,15 +246,15 @@ export default function BlogPage() {
             {/* Blog Posts Grid */}
             {displayedPosts.length === 0 ? (
               <div className="text-center py-20">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-accent/10 mb-6">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-[#0a1628] mb-6">
                   <Search className="h-8 w-8 text-accent" />
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-foreground mb-4">
+                <h3 className="text-2xl font-serif font-bold text-[#0a1628] mb-4">
                   {locale === "ar"
                     ? "لم يتم العثور على مقالات"
                     : "No Articles Found"}
                 </h3>
-                <p className="text-muted-foreground text-base max-w-md mx-auto mb-6">
+                <p className="text-[#0a1628]/60 text-base max-w-md mx-auto mb-6">
                   {locale === "ar"
                     ? "جرب البحث بكلمات مختلفة أو تصفح جميع الفئات"
                     : "Try searching with different keywords or browse all categories"}
@@ -280,7 +276,7 @@ export default function BlogPage() {
                   {displayedPosts.map((article, index) => (
                     <motion.article
                       key={article.id}
-                      className="group bg-background border border-border hover:border-accent/50 overflow-hidden transition-all duration-300 flex flex-col h-full"
+                      className="group bg-white border border-gray-100 shadow-sm hover:border-accent/50 overflow-hidden transition-all duration-300 flex flex-col h-full"
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -309,7 +305,7 @@ export default function BlogPage() {
                       {/* Content Section */}
                       <div className="p-6 flex flex-col flex-1">
                         {/* Meta Information */}
-                        <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
+                        <div className="flex items-center gap-4 text-xs text-[#0a1628]/50 mb-3">
                           <div className="flex items-center gap-1.5">
                             <Calendar className="h-3.5 w-3.5" />
                             {formatDate(article.date)}
@@ -323,12 +319,12 @@ export default function BlogPage() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-lg font-serif font-bold text-foreground leading-tight line-clamp-2 mb-3 group-hover:text-accent transition-colors duration-200">
+                        <h3 className="text-lg font-serif font-bold text-[#0a1628] leading-tight line-clamp-2 mb-3 group-hover:text-accent transition-colors duration-200">
                           {locale === "ar" ? article.titleAr : article.titleEn}
                         </h3>
 
                         {/* Excerpt */}
-                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2 mb-4 flex-1">
+                        <p className="text-sm text-[#0a1628]/60 leading-relaxed line-clamp-2 mb-4 flex-1">
                           {locale === "ar"
                             ? article.excerptAr
                             : article.excerptEn}
@@ -353,7 +349,7 @@ export default function BlogPage() {
                       variant="outline"
                       size="lg"
                       onClick={() => setShowAllArticles(!showAllArticles)}
-                      className="border-foreground text-foreground hover:bg-foreground hover:text-background bg-transparent font-medium px-8 cursor-pointer tracking-wide uppercase"
+                      className="border-[#0a1628] text-[#0a1628] hover:bg-[#0a1628] hover:text-white bg-transparent font-medium px-8 cursor-pointer tracking-wide uppercase"
                     >
                       {showAllArticles
                         ? locale === "ar"

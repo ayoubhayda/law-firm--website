@@ -120,19 +120,9 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="relative py-20 lg:py-28 overflow-hidden bg-background">
-          {/* Background Image with Overlay */}
-          <div className="absolute inset-0">
-            <img
-              src="/elegant-law-office-banner.webp"
-              alt="Professional Legal Office"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
-          {/* Content */}
+        {/* Hero Section - Dark with grid pattern, NO background image */}
+        <section className="relative py-24 lg:py-32 overflow-hidden bg-background grid-pattern">
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none"></div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center max-w-3xl mx-auto"
@@ -140,18 +130,25 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-px w-12 bg-accent"></div>
+                <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
+                  {locale === "ar" ? "تواصل معنا" : "Contact Us"}
+                </span>
+                <div className="h-px w-12 bg-accent"></div>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
                 {locale === "ar" ? (
                   <>
-                    تواصل <span className="text-accent italic">معنا</span>
+                    تواصل <span className="text-accent">معنا</span>
                   </>
                 ) : (
                   <>
-                    GET IN <span className="text-accent italic">TOUCH</span>
+                    GET IN <span className="text-accent">TOUCH</span>
                   </>
                 )}
               </h1>
-              <p className="text-white/80 text-base lg:text-lg leading-relaxed">
+              <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
                 {locale === "ar"
                   ? "نحن هنا لمساعدتكم. تواصلوا معنا للحصول على استشارة قانونية مهنية"
                   : "We are here to help you. Contact us for professional legal consultation"}
@@ -179,10 +176,10 @@ export default function ContactPage() {
                       {locale === "ar" ? "أرسل رسالة" : "Send Message"}
                     </span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-foreground mb-3">
+                  <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#0a1628] mb-3">
                     {locale === "ar" ? "تواصل معنا" : "GET IN TOUCH"}
                   </h2>
-                  <p className="text-muted-foreground text-base">
+                  <p className="text-[#0a1628]/60 text-base">
                     {locale === "ar"
                       ? "نحن نقدر تواصلكم معنا ونتطلع لمساعدتكم في احتياجاتكم القانونية"
                       : "We value your communication and look forward to helping you with your legal needs"}
@@ -190,7 +187,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Form */}
-                <div className="bg-background border border-border p-6 lg:p-8">
+                <div className="bg-white border border-gray-100 shadow-sm p-6 lg:p-8">
                   {isSubmitted ? (
                     <motion.div
                       className="text-center py-12"
@@ -201,12 +198,12 @@ export default function ContactPage() {
                       <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
                         <CheckCircle className="h-8 w-8 text-green-500" />
                       </div>
-                      <h3 className="text-xl font-serif font-bold text-foreground mb-3">
+                      <h3 className="text-xl font-serif font-bold text-[#0a1628] mb-3">
                         {locale === "ar"
                           ? "تم إرسال الرسالة بنجاح!"
                           : "Message Sent Successfully!"}
                       </h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-[#0a1628]/60">
                         {locale === "ar"
                           ? "شكراً لتواصلكم معنا. سنرد عليكم قريباً."
                           : "Thank you for contacting us. We'll get back to you soon."}
@@ -218,7 +215,7 @@ export default function ContactPage() {
                         <div className="space-y-2">
                           <Label
                             htmlFor="name"
-                            className="text-foreground font-medium"
+                            className="text-[#0a1628] font-medium"
                           >
                             {getTranslation(locale, "name")}
                           </Label>
@@ -232,13 +229,13 @@ export default function ContactPage() {
                             placeholder={
                               locale === "ar" ? "اسمك الكامل" : "Your full name"
                             }
-                            className="h-12 border-border bg-background focus:border-accent"
+                            className="h-12 border-gray-200 bg-gray-50 focus:border-accent text-[#0a1628]"
                           />
                         </div>
                         <div className="space-y-2">
                           <Label
                             htmlFor="phone"
-                            className="text-foreground font-medium"
+                            className="text-[#0a1628] font-medium"
                           >
                             {getTranslation(locale, "phone")}
                           </Label>
@@ -252,7 +249,7 @@ export default function ContactPage() {
                             placeholder={
                               locale === "ar" ? "رقم الهاتف" : "Phone number"
                             }
-                            className="h-12 border-border bg-background focus:border-accent"
+                            className="h-12 border-gray-200 bg-gray-50 focus:border-accent text-[#0a1628]"
                             dir="ltr"
                             style={{
                               textAlign: locale === "ar" ? "right" : "left",
@@ -264,7 +261,7 @@ export default function ContactPage() {
                       <div className="space-y-2">
                         <Label
                           htmlFor="email"
-                          className="text-foreground font-medium"
+                          className="text-[#0a1628] font-medium"
                         >
                           {getTranslation(locale, "email")}
                         </Label>
@@ -280,14 +277,14 @@ export default function ContactPage() {
                               ? "بريدك الإلكتروني"
                               : "Your email address"
                           }
-                          className="h-12 border-border bg-background focus:border-accent"
+                          className="h-12 border-gray-200 bg-gray-50 focus:border-accent text-[#0a1628]"
                         />
                       </div>
 
                       <div className="space-y-2">
                         <Label
                           htmlFor="subject"
-                          className="text-foreground font-medium"
+                          className="text-[#0a1628] font-medium"
                         >
                           {locale === "ar" ? "موضوع الرسالة" : "Subject"}
                         </Label>
@@ -303,14 +300,14 @@ export default function ContactPage() {
                               ? "موضوع استفسارك"
                               : "Subject of your inquiry"
                           }
-                          className="h-12 border-border bg-background focus:border-accent"
+                          className="h-12 border-gray-200 bg-gray-50 focus:border-accent text-[#0a1628]"
                         />
                       </div>
 
                       <div className="space-y-2">
                         <Label
                           htmlFor="message"
-                          className="text-foreground font-medium"
+                          className="text-[#0a1628] font-medium"
                         >
                           {getTranslation(locale, "message")}
                         </Label>
@@ -326,7 +323,7 @@ export default function ContactPage() {
                               ? "اكتب رسالتك هنا..."
                               : "Write your message here..."
                           }
-                          className="border-border bg-background focus:border-accent resize-none"
+                          className="border-gray-200 bg-gray-50 focus:border-accent resize-none text-[#0a1628]"
                         />
                       </div>
 
@@ -363,7 +360,7 @@ export default function ContactPage() {
               >
                 {/* Contact Details */}
                 <div>
-                  <h3 className="text-xl font-serif font-bold text-foreground mb-6">
+                  <h3 className="text-xl font-serif font-bold text-[#0a1628] mb-6">
                     {locale === "ar"
                       ? "معلومات التواصل"
                       : "CONTACT INFORMATION"}
@@ -372,21 +369,21 @@ export default function ContactPage() {
                     {contactInfo.map((info, index) => (
                       <motion.div
                         key={index}
-                        className="group flex items-start gap-4 p-4 bg-background border border-border hover:border-accent/50 transition-all duration-300"
+                        className="group flex items-start gap-4 p-4 bg-white border border-gray-100 shadow-sm hover:border-accent/50 transition-all duration-300"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                       >
-                        <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors duration-300">
-                          <info.icon className="w-5 h-5 text-accent" />
+                        <div className="w-12 h-12 bg-[#0a1628] flex items-center justify-center shrink-0 group-hover:bg-accent transition-colors duration-300">
+                          <info.icon className="w-5 h-5 text-accent group-hover:text-white transition-colors duration-300" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-medium text-foreground mb-1">
+                          <h4 className="font-medium text-[#0a1628] mb-1">
                             {info.title}
                           </h4>
                           <p
-                            className="text-foreground text-sm font-medium mb-1"
+                            className="text-[#0a1628] text-sm font-medium mb-1"
                             dir="ltr"
                             style={{
                               textAlign: locale === "ar" ? "right" : "left",
@@ -394,7 +391,7 @@ export default function ContactPage() {
                           >
                             {info.value}
                           </p>
-                          <p className="text-muted-foreground text-xs">
+                          <p className="text-[#0a1628]/50 text-xs">
                             {info.description}
                           </p>
                         </div>
@@ -405,17 +402,17 @@ export default function ContactPage() {
 
                 {/* Office Hours */}
                 <motion.div
-                  className="bg-background border border-border p-6"
+                  className="bg-white border border-gray-100 shadow-sm p-6"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                    <div className="w-10 h-10 bg-[#0a1628] flex items-center justify-center">
                       <Clock className="w-5 h-5 text-accent" />
                     </div>
-                    <h3 className="text-lg font-serif font-bold text-foreground">
+                    <h3 className="text-lg font-serif font-bold text-[#0a1628]">
                       {locale === "ar" ? "ساعات العمل" : "Office Hours"}
                     </h3>
                   </div>
@@ -423,9 +420,9 @@ export default function ContactPage() {
                     {officeHours.map((schedule, index) => (
                       <div
                         key={index}
-                        className="flex justify-between items-center py-2 border-b border-border last:border-0"
+                        className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0"
                       >
-                        <span className="text-foreground text-sm font-medium">
+                        <span className="text-[#0a1628] text-sm font-medium">
                           {schedule.day}
                         </span>
                         <span
@@ -445,21 +442,21 @@ export default function ContactPage() {
 
                 {/* Quick Actions */}
                 <motion.div
-                  className="bg-accent/5 border border-accent/20 p-6"
+                  className="bg-[#0a1628] border border-border p-6"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                 >
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+                    <div className="w-10 h-10 bg-accent/20 flex items-center justify-center">
                       <Calendar className="w-5 h-5 text-accent" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-serif font-bold text-foreground">
+                      <h3 className="text-lg font-serif font-bold text-white">
                         {locale === "ar" ? "احجز استشارة" : "Book Consultation"}
                       </h3>
-                      <p className="text-muted-foreground text-sm">
+                      <p className="text-white/60 text-sm">
                         {locale === "ar"
                           ? "احصل على استشارة قانونية مجانية لمدة 30 دقيقة"
                           : "Get a free 30-minute legal consultation"}
@@ -476,7 +473,7 @@ export default function ContactPage() {
                     </Button>
                     <Button
                       variant="outline"
-                      className="w-full h-12 border-green-500/40 text-green-600 hover:bg-green-500/10 hover:text-green-600 bg-transparent font-medium cursor-pointer tracking-wide uppercase"
+                      className="w-full h-12 border-green-500/40 text-green-400 hover:bg-green-500/10 hover:text-green-400 bg-transparent font-medium cursor-pointer tracking-wide uppercase"
                     >
                       <MessageCircle className="me-2 h-5 w-5" />
                       {locale === "ar"

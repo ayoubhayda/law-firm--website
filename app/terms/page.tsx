@@ -232,51 +232,49 @@ export default function TermsPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="py-20 bg-[#060a12] text-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <motion.div
-                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent/20"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <FileText className="h-8 w-8 text-accent" />
-              </motion.div>
-              <motion.h1
-                className="text-4xl md:text-5xl font-bold mb-6 font-serif text-balance"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                {locale === "ar" ? "شروط الخدمة" : "Terms of Service"}
-              </motion.h1>
-              <motion.p
-                className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-pretty"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
+        {/* Hero Section - Dark with grid pattern */}
+        <section className="relative py-24 lg:py-32 overflow-hidden bg-background grid-pattern">
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none"></div>
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-px w-12 bg-accent"></div>
+                <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
+                  {locale === "ar" ? "شروط الخدمة" : "Terms of Service"}
+                </span>
+                <div className="h-px w-12 bg-accent"></div>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
+                {locale === "ar" ? (
+                  <>
+                    شروط <span className="text-accent">الخدمة</span>
+                  </>
+                ) : (
+                  <>
+                    TERMS OF <span className="text-accent">SERVICE</span>
+                  </>
+                )}
+              </h1>
+              <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-4">
                 {locale === "ar"
                   ? "الشروط والأحكام التي تحكم استخدام خدماتنا القانونية"
                   : "Terms and conditions governing the use of our legal services"}
-              </motion.p>
-              <motion.p
-                className="text-white/80 mt-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
+              </p>
+              <p className="text-muted-foreground/70 text-sm">
                 {locale === "ar" ? "آخر تحديث: " : "Last updated: "}
                 {formatDate(lastUpdated)}
-              </motion.p>
-            </div>
+              </p>
+            </motion.div>
           </div>
         </section>
 
         {/* Content Section */}
-        <section className="py-20">
+        <section className="py-16 lg:py-24 bg-premium">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             {/* Introduction */}
             <motion.div
@@ -285,9 +283,9 @@ export default function TermsPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="mb-12 border-accent/20 bg-accent/5">
+              <Card className="mb-12 border-gray-100 bg-white shadow-sm">
                 <CardContent className="p-8">
-                  <p className="text-lg text-foreground leading-relaxed text-pretty">
+                  <p className="text-lg text-[#0a1628] leading-relaxed text-pretty">
                     {locale === "ar"
                       ? "تحدد هذه الشروط والأحكام القواعد والمبادئ التي تحكم العلاقة بيننا وبين عملائنا عند تقديم الخدمات القانونية. يرجى قراءة هذه الشروط بعناية قبل استخدام خدماتنا، حيث أن استخدامك لخدماتنا يعني موافقتك على هذه الشروط."
                       : "These terms and conditions outline the rules and principles governing the relationship between us and our clients when providing legal services. Please read these terms carefully before using our services, as your use of our services constitutes your agreement to these terms."}
@@ -313,17 +311,17 @@ export default function TermsPage() {
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <motion.div
-                      className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10"
+                      className="flex h-12 w-12 items-center justify-center bg-[#0a1628]"
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
                       <section.icon className="h-6 w-6 text-accent" />
                     </motion.div>
-                    <h2 className="text-2xl font-bold text-foreground font-serif">
+                    <h2 className="text-2xl font-bold text-[#0a1628] font-serif">
                       {section.title}
                     </h2>
                   </div>
-                  <Card className="border-border">
+                  <Card className="border-gray-100 bg-white shadow-sm">
                     <CardContent className="p-8">
                       <motion.div
                         className="space-y-4"
@@ -335,7 +333,7 @@ export default function TermsPage() {
                         {section.content.map((paragraph, paragraphIndex) => (
                           <motion.p
                             key={paragraphIndex}
-                            className="text-muted-foreground leading-relaxed"
+                            className="text-[#0a1628]/60 leading-relaxed"
                             variants={scaleIn}
                           >
                             {paragraph}
@@ -355,27 +353,27 @@ export default function TermsPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Card className="mt-12 border-accent/20 bg-accent/5">
+              <Card className="mt-12 border-gray-100 bg-white shadow-sm">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <motion.div
-                      className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/20"
+                      className="flex h-12 w-12 items-center justify-center bg-[#0a1628]"
                       whileHover={{ scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <Mail className="h-6 w-6 text-accent" />
                     </motion.div>
-                    <h2 className="text-2xl font-bold text-foreground font-serif">
+                    <h2 className="text-2xl font-bold text-[#0a1628] font-serif">
                       {locale === "ar" ? "تواصل معنا" : "Contact Us"}
                     </h2>
                   </div>
-                  <p className="text-foreground leading-relaxed mb-4">
+                  <p className="text-[#0a1628] leading-relaxed mb-4">
                     {locale === "ar"
                       ? "إذا كان لديك أي أسئلة حول شروط الخدمة هذه، يرجى التواصل معنا:"
                       : "If you have any questions about these terms of service, please contact us:"}
                   </p>
                   <motion.div
-                    className="space-y-2 text-muted-foreground"
+                    className="space-y-2 text-[#0a1628]/60"
                     variants={staggerContainer}
                     initial="initial"
                     whileInView="animate"

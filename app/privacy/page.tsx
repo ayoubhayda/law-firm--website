@@ -1,59 +1,69 @@
-"use client"
+"use client";
 
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { WhatsAppButton } from "@/components/whatsapp-button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Shield, Eye, Lock, Database, Users, FileText, Calendar, Mail } from "lucide-react"
-import { useLocale } from "@/hooks/use-locale-context"
-import { motion } from "framer-motion"
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { WhatsAppButton } from "@/components/whatsapp-button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Shield,
+  Eye,
+  Lock,
+  Database,
+  Users,
+  FileText,
+  Calendar,
+  Mail,
+} from "lucide-react";
+import { useLocale } from "@/hooks/use-locale-context";
+import { motion } from "framer-motion";
 
 export default function PrivacyPage() {
-  const { locale } = useLocale()
+  const { locale } = useLocale();
 
-  const lastUpdated = "2024-01-01"
+  const lastUpdated = "2024-01-01";
 
   // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6, ease: "easeOut" },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const scaleIn = {
     initial: { opacity: 0, scale: 0.9 },
     animate: { opacity: 1, scale: 1 },
-    transition: { duration: 0.5, ease: "easeOut" }
+    transition: { duration: 0.5, ease: "easeOut" },
   };
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
+    const date = new Date(dateString);
     if (locale === "ar") {
       return date.toLocaleDateString("ar-SA", {
         year: "numeric",
         month: "long",
         day: "numeric",
-      })
+      });
     }
     return date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
-    })
-  }
+    });
+  };
 
   const sections = [
     {
       icon: Eye,
-      title: locale === "ar" ? "المعلومات التي نجمعها" : "Information We Collect",
+      title:
+        locale === "ar" ? "المعلومات التي نجمعها" : "Information We Collect",
       content:
         locale === "ar"
           ? [
@@ -73,7 +83,8 @@ export default function PrivacyPage() {
     },
     {
       icon: Database,
-      title: locale === "ar" ? "كيف نستخدم معلوماتك" : "How We Use Your Information",
+      title:
+        locale === "ar" ? "كيف نستخدم معلوماتك" : "How We Use Your Information",
       content:
         locale === "ar"
           ? [
@@ -181,57 +192,55 @@ export default function PrivacyPage() {
               "• After retention periods end, we securely delete or destroy all information",
             ],
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="py-20 bg-[#060a12] text-white">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <motion.div 
-                className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-accent/20"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <Shield className="h-8 w-8 text-accent" />
-              </motion.div>
-              <motion.h1 
-                className="text-4xl md:text-5xl font-bold mb-6 font-serif text-balance"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                {locale === "ar" ? "سياسة الخصوصية" : "Privacy Policy"}
-              </motion.h1>
-              <motion.p 
-                className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-pretty"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-              >
+        {/* Hero Section - Dark with grid pattern */}
+        <section className="relative py-24 lg:py-32 overflow-hidden bg-background grid-pattern">
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none"></div>
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              className="text-center max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-px w-12 bg-accent"></div>
+                <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
+                  {locale === "ar" ? "سياسة الخصوصية" : "Privacy Policy"}
+                </span>
+                <div className="h-px w-12 bg-accent"></div>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
+                {locale === "ar" ? (
+                  <>
+                    سياسة <span className="text-accent">الخصوصية</span>
+                  </>
+                ) : (
+                  <>
+                    PRIVACY <span className="text-accent">POLICY</span>
+                  </>
+                )}
+              </h1>
+              <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-4">
                 {locale === "ar"
                   ? "نحن ملتزمون بحماية خصوصيتك وأمان معلوماتك الشخصية"
                   : "We are committed to protecting your privacy and the security of your personal information"}
-              </motion.p>
-              <motion.p 
-                className="text-white/80 mt-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
+              </p>
+              <p className="text-muted-foreground/70 text-sm">
                 {locale === "ar" ? "آخر تحديث: " : "Last updated: "}
                 {formatDate(lastUpdated)}
-              </motion.p>
-            </div>
+              </p>
+            </motion.div>
           </div>
         </section>
 
         {/* Content Section */}
-        <section className="py-20">
+        <section className="py-16 lg:py-24 bg-premium">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             {/* Introduction */}
             <motion.div
@@ -240,9 +249,9 @@ export default function PrivacyPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <Card className="mb-12 border-accent/20 bg-accent/5">
+              <Card className="mb-12 border-gray-100 bg-white shadow-sm">
                 <CardContent className="p-8">
-                  <p className="text-lg text-foreground leading-relaxed text-pretty">
+                  <p className="text-lg text-[#0a1628] leading-relaxed text-pretty">
                     {locale === "ar"
                       ? "تحدد هذه السياسة كيفية جمع واستخدام وحماية المعلومات الشخصية التي تقدمها لنا عند استخدام خدماتنا القانونية أو زيارة موقعنا الإلكتروني. نحن ملتزمون بحماية خصوصيتك وضمان أمان معلوماتك وفقاً لأعلى المعايير المهنية والقانونية."
                       : "This policy outlines how we collect, use, and protect the personal information you provide when using our legal services or visiting our website. We are committed to protecting your privacy and ensuring the security of your information according to the highest professional and legal standards."}
@@ -252,7 +261,7 @@ export default function PrivacyPage() {
             </motion.div>
 
             {/* Privacy Sections */}
-            <motion.div 
+            <motion.div
               className="space-y-12"
               variants={staggerContainer}
               initial="initial"
@@ -260,25 +269,27 @@ export default function PrivacyPage() {
               viewport={{ once: true, margin: "-100px" }}
             >
               {sections.map((section, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   variants={fadeInUp}
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="flex items-center gap-4 mb-6">
-                    <motion.div 
-                      className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10"
+                    <motion.div
+                      className="flex h-12 w-12 items-center justify-center bg-[#0a1628]"
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
                     >
                       <section.icon className="h-6 w-6 text-accent" />
                     </motion.div>
-                    <h2 className="text-2xl font-bold text-foreground font-serif">{section.title}</h2>
+                    <h2 className="text-2xl font-bold text-[#0a1628] font-serif">
+                      {section.title}
+                    </h2>
                   </div>
-                  <Card className="border-border">
+                  <Card className="border-gray-100 bg-white shadow-sm">
                     <CardContent className="p-8">
-                      <motion.div 
+                      <motion.div
                         className="space-y-4"
                         variants={staggerContainer}
                         initial="initial"
@@ -286,9 +297,9 @@ export default function PrivacyPage() {
                         viewport={{ once: true }}
                       >
                         {section.content.map((paragraph, paragraphIndex) => (
-                          <motion.p 
-                            key={paragraphIndex} 
-                            className="text-muted-foreground leading-relaxed"
+                          <motion.p
+                            key={paragraphIndex}
+                            className="text-[#0a1628]/60 leading-relaxed"
                             variants={scaleIn}
                           >
                             {paragraph}
@@ -308,42 +319,48 @@ export default function PrivacyPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Card className="mt-12 border-accent/20 bg-accent/5">
+              <Card className="mt-12 border-gray-100 bg-white shadow-sm">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-4 mb-6">
-                    <motion.div 
-                      className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/20"
+                    <motion.div
+                      className="flex h-12 w-12 items-center justify-center bg-[#0a1628]"
                       whileHover={{ scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <Mail className="h-6 w-6 text-accent" />
                     </motion.div>
-                    <h2 className="text-2xl font-bold text-foreground font-serif">
+                    <h2 className="text-2xl font-bold text-[#0a1628] font-serif">
                       {locale === "ar" ? "تواصل معنا" : "Contact Us"}
                     </h2>
                   </div>
-                  <p className="text-foreground leading-relaxed mb-4">
+                  <p className="text-[#0a1628] leading-relaxed mb-4">
                     {locale === "ar"
                       ? "إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه أو كيفية تعاملنا مع معلوماتك الشخصية، يرجى التواصل معنا:"
                       : "If you have any questions about this privacy policy or how we handle your personal information, please contact us:"}
                   </p>
-                  <motion.div 
-                    className="space-y-2 text-muted-foreground"
+                  <motion.div
+                    className="space-y-2 text-[#0a1628]/60"
                     variants={staggerContainer}
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
                   >
                     <motion.p variants={fadeInUp}>
-                      <strong>{locale === "ar" ? "البريد الإلكتروني: " : "Email: "}</strong>
+                      <strong>
+                        {locale === "ar" ? "البريد الإلكتروني: " : "Email: "}
+                      </strong>
                       privacy@premiumlegal.com
                     </motion.p>
                     <motion.p variants={fadeInUp}>
-                      <strong>{locale === "ar" ? "الهاتف: " : "Phone: "}</strong>
+                      <strong>
+                        {locale === "ar" ? "الهاتف: " : "Phone: "}
+                      </strong>
                       <span dir="ltr">+966 50 123 4567</span>
                     </motion.p>
                     <motion.p variants={fadeInUp}>
-                      <strong>{locale === "ar" ? "العنوان: " : "Address: "}</strong>
+                      <strong>
+                        {locale === "ar" ? "العنوان: " : "Address: "}
+                      </strong>
                       {locale === "ar"
                         ? "شارع الملك فهد، حي العليا، الرياض 12211، المملكة العربية السعودية"
                         : "King Fahd Road, Al Olaya District, Riyadh 12211, Saudi Arabia"}
@@ -358,5 +375,5 @@ export default function PrivacyPage() {
       <Footer />
       <WhatsAppButton />
     </div>
-  )
+  );
 }

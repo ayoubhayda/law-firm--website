@@ -161,19 +161,9 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="relative py-20 lg:py-28 overflow-hidden bg-background">
-          {/* Background Image with Overlay */}
-          <div className="absolute inset-0">
-            <img
-              src="/elegant-law-office-banner.webp"
-              alt="Professional Legal Office"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/60" />
-          </div>
-
-          {/* Content */}
+        {/* Hero Section - Dark with grid pattern, NO background image */}
+        <section className="relative py-24 lg:py-32 overflow-hidden bg-background grid-pattern">
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/5 via-transparent to-transparent pointer-events-none"></div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div
               className="text-center max-w-3xl mx-auto"
@@ -181,20 +171,25 @@ export default function ServicesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="h-px w-12 bg-accent"></div>
+                <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
+                  {locale === "ar" ? "خدماتنا القانونية" : "Our Legal Services"}
+                </span>
+                <div className="h-px w-12 bg-accent"></div>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-foreground mb-6 leading-tight">
                 {locale === "ar" ? (
                   <>
-                    خدماتنا{" "}
-                    <span className="text-accent italic">القانونية</span>
+                    خدماتنا <span className="text-accent">القانونية</span>
                   </>
                 ) : (
                   <>
-                    OUR <span className="text-accent italic">LEGAL</span>{" "}
-                    SERVICES
+                    OUR <span className="text-accent">LEGAL</span> SERVICES
                   </>
                 )}
               </h1>
-              <p className="text-white/80 text-base lg:text-lg leading-relaxed">
+              <p className="text-muted-foreground text-base lg:text-lg leading-relaxed">
                 {locale === "ar"
                   ? "نقدم مجموعة شاملة من الخدمات القانونية المتخصصة لتلبية جميع احتياجاتكم القانونية"
                   : "We offer a comprehensive range of specialized legal services to meet all your legal needs"}
@@ -214,10 +209,10 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0a1628] mb-4">
                 {locale === "ar" ? "مجالات تخصصنا" : "OUR PRACTICE AREAS"}
               </h2>
-              <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+              <p className="text-[#0a1628]/60 text-base max-w-2xl mx-auto">
                 {locale === "ar"
                   ? "خدمات قانونية متكاملة تلبي جميع احتياجاتكم"
                   : "Comprehensive legal services to meet all your needs"}
@@ -229,30 +224,30 @@ export default function ServicesPage() {
               {services.map((service, index) => (
                 <motion.div
                   key={index}
-                  className="group bg-background border border-border hover:border-accent/50 transition-all duration-300 flex flex-col h-full"
+                  className="group bg-white border border-gray-100 shadow-sm hover:border-accent/50 transition-all duration-300 flex flex-col h-full"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* Card Header */}
-                  <div className="p-6 border-b border-border">
+                  <div className="p-6 border-b border-gray-100">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
-                        <service.icon className="w-6 h-6 text-accent" />
+                      <div className="w-12 h-12 bg-[#0a1628] flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                        <service.icon className="w-6 h-6 text-accent group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <h3 className="text-lg font-serif font-bold text-foreground group-hover:text-accent transition-colors duration-300">
+                      <h3 className="text-lg font-serif font-bold text-[#0a1628] group-hover:text-accent transition-colors duration-300">
                         {service.title}
                       </h3>
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-[#0a1628]/60 text-sm leading-relaxed">
                       {service.description}
                     </p>
                   </div>
 
                   {/* Features */}
                   <div className="p-6 flex-1">
-                    <h4 className="text-sm font-medium text-foreground mb-3">
+                    <h4 className="text-sm font-medium text-[#0a1628] mb-3">
                       {locale === "ar"
                         ? "الخدمات المشمولة:"
                         : "Services Included:"}
@@ -261,7 +256,7 @@ export default function ServicesPage() {
                       {service.features.map((feature, featureIndex) => (
                         <li
                           key={featureIndex}
-                          className="flex items-center gap-2 text-sm text-muted-foreground"
+                          className="flex items-center gap-2 text-sm text-[#0a1628]/60"
                         >
                           <CheckCircle className="w-4 h-4 text-accent shrink-0" />
                           {feature}
@@ -286,7 +281,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Process Section - Dark Background */}
-        <section className="py-16 lg:py-24 bg-background">
+        <section className="py-16 lg:py-24 bg-background grid-pattern">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Section Header */}
             <motion.div
@@ -297,13 +292,13 @@ export default function ServicesPage() {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="h-px w-8 bg-accent"></div>
+                <div className="h-px w-12 bg-accent"></div>
                 <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
                   {locale === "ar"
                     ? "منهجية عمل متميزة"
                     : "Distinguished Work Methodology"}
                 </span>
-                <div className="h-px w-8 bg-accent"></div>
+                <div className="h-px w-12 bg-accent"></div>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
                 {locale === "ar" ? "كيف نعمل" : "HOW WE WORK"}
@@ -320,14 +315,14 @@ export default function ServicesPage() {
               {processSteps.map((step, index) => (
                 <motion.div
                   key={index}
-                  className="group p-6 border border-border hover:border-accent/50 transition-all duration-300 text-center"
+                  className="group p-6 border border-border bg-card/50 hover:border-accent/50 transition-all duration-300 text-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* Step Number */}
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 border border-accent/30 text-accent text-xl font-bold mb-4 group-hover:bg-accent/20 transition-colors duration-300">
+                  <div className="inline-flex items-center justify-center w-14 h-14 bg-accent/10 border border-accent/30 text-accent text-xl font-bold mb-4 group-hover:bg-accent/20 transition-colors duration-300">
                     {step.step}
                   </div>
 

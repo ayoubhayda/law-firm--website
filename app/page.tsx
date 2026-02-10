@@ -9,6 +9,7 @@ import { AboutPreview } from "@/components/about-preview";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { CTASection } from "@/components/cta-section";
 import { useLocale } from "@/hooks/use-locale-context";
+import PracticeAreasBar from "@/components/General/PracticeAreasBar";
 
 export default function HomePage() {
   const { locale } = useLocale();
@@ -17,23 +18,22 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section with Lawyer Portrait and Stats Badges */}
+        {/* Hero Section with Lawyer Portrait */}
         <HeroSection />
 
-        {/* Services Section: Trusted + Corporate Legal Support */}
+        {/* Practice Areas Bar */}
+        <PracticeAreasBar />
+
+        {/* Vision & Mission + Services Grid */}
         <ServicesPreview />
 
-        {/* About Section: Features + Real-World Expertise */}
+        {/* Why Firmen + Partners */}
         <AboutPreview />
 
-        {/* FAQ + Testimonials Section */}
-        <section className="py-16 lg:py-24 bg-background">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <TestimonialCarousel />
-          </div>
-        </section>
+        {/* Quote + FAQ + Testimonials */}
+        <TestimonialCarousel />
 
-        {/* Blog Posts + Final CTA */}
+        {/* Booking Form + Blog + Final CTA */}
         <CTASection />
       </main>
       <Footer />

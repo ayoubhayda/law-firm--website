@@ -5,14 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-
-import Logo from "@/assets/logos/FIRMEN-LOGO.png";
-import Image from "next/image";
 import { ServiceConsultationModal } from "./service-consultation-modal";
+import Image from "next/image";
+import Logo from "@/assets/logos/FIRMEN-LOGO-GOLD.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,16 +36,16 @@ export function Navbar() {
 
   return (
     <>
-      <nav className="bg-background/90 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50 w-full border-b border-border/30">
+      <nav className="bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50 w-full border-b border-border/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 lg:h-20 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <Link href="/" className="flex items-center gap-2 group">
+              <Link href="/" className="flex items-center gap-3 group">
                 {/* Elegant Law Firm Icon */}
                 <Image
                   src={Logo}
-                  alt="Adlex Logo"
+                  alt="Firmen Logo"
                   width={30}
                   height={30}
                   priority
@@ -68,13 +67,22 @@ export function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      "px-4 py-2 text-sm font-medium transition-colors duration-200 tracking-wide uppercase",
+                      "px-4 py-2 text-sm font-medium transition-all duration-200 tracking-wide relative group",
                       isActiveRoute(item.href)
                         ? "text-accent"
-                        : "text-foreground/70 hover:text-accent",
+                        : "text-foreground/80 hover:text-accent",
                     )}
                   >
                     {item.name}
+                    {/* Underline effect */}
+                    <span
+                      className={cn(
+                        "absolute bottom-0 start-4 end-4 h-0.5 bg-accent transition-transform duration-300 origin-start",
+                        isActiveRoute(item.href)
+                          ? "scale-x-100"
+                          : "scale-x-0 group-hover:scale-x-100",
+                      )}
+                    ></span>
                   </Link>
                 ))}
               </div>
@@ -84,11 +92,10 @@ export function Navbar() {
             <div className="hidden lg:flex items-center gap-4 rtl:space-x-reverse">
               <LanguageSwitcher />
               <Button
-                variant="outline"
                 onClick={() => setIsConsultationOpen(true)}
-                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent font-medium transition-all duration-200 cursor-pointer tracking-wide uppercase text-sm px-6"
+                className="bg-accent text-accent-foreground hover:bg-accent/90 font-medium transition-all duration-200 cursor-pointer tracking-wide text-sm px-6"
               >
-                {locale === "ar" ? "تواصل معنا" : "Contact Us"}
+                {locale === "ar" ? "احجز استشارة" : "Book Consultation"}
               </Button>
             </div>
 
@@ -96,10 +103,10 @@ export function Navbar() {
             <div className="lg:hidden flex items-center gap-2 rtl:space-x-reverse">
               <LanguageSwitcher />
               <Button
-                variant="outline"
+                variant="ghost"
                 size="icon"
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-transparent border-border/50 hover:border-accent hover:bg-accent/10 cursor-pointer transition-all duration-200"
+                className="text-foreground hover:text-accent hover:bg-accent/10 cursor-pointer transition-all duration-200"
               >
                 {isOpen ? (
                   <X className="h-5 w-5" />
@@ -119,10 +126,10 @@ export function Navbar() {
                     key={item.name}
                     href={item.href}
                     className={cn(
-                      "block px-4 py-3 text-sm font-medium transition-colors duration-200 tracking-wide uppercase",
+                      "block px-4 py-3 text-sm font-medium transition-colors duration-200 tracking-wide",
                       isActiveRoute(item.href)
                         ? "text-accent border-s-2 border-accent bg-accent/5"
-                        : "text-foreground/70 hover:text-accent hover:bg-accent/5",
+                        : "text-foreground/80 hover:text-accent hover:bg-accent/5",
                     )}
                     onClick={() => setIsOpen(false)}
                   >
@@ -131,16 +138,14 @@ export function Navbar() {
                 ))}
                 <div className="pt-4 px-2">
                   <Button
-                    variant="outline"
                     onClick={() => {
                       setIsConsultationOpen(true);
                       setIsOpen(false);
                     }}
-                    size="lg"
-                    className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent font-medium py-3 transition-all duration-200 cursor-pointer tracking-wide uppercase"
+                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-medium py-3 transition-all duration-200 cursor-pointer tracking-wide"
                   >
                     <Phone className="w-4 h-4 me-2" />
-                    {locale === "ar" ? "تواصل معنا" : "Contact Us"}
+                    {locale === "ar" ? "احجز استشارة" : "Book Consultation"}
                   </Button>
                 </div>
               </div>

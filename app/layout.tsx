@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Playfair_Display, Cairo } from "next/font/google";
-import { ClientLayout } from "@/components/client-layout";
 import { LocaleProvider } from "@/hooks/use-locale-context";
 import "./globals.css";
+import { ClientLayout } from "@/components/client-layout";
 
 const geistSans = GeistSans;
 const geistMono = GeistMono;
@@ -23,47 +23,49 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Adex | Professional Law Firm Website",
+  title: "Firmen | فيرمن - مكتب محاماة متخصص",
   description:
-    "Adex is a modern, responsive law firm website featuring consultation booking, dark mode, multilingual support, and SEO optimization. Built with Next.js, TypeScript, and Tailwind CSS.",
+    "فيرمن - مكتب محاماة متخصص يقدم خدمات قانونية متميزة تشمل الاستشارات القانونية، الترجمة القانونية، الملكية الفكرية، والتمثيل في المحاكم. Firmen - Professional law firm providing exceptional legal services.",
 
-  metadataBase: new URL("https://adex-law.vercel.app"),
+  metadataBase: new URL("https://firmen-law.vercel.app"),
 
   keywords: [
-    "Law Firm Website",
-    "Legal Website Design",
-    "Next.js Law Firm",
-    "Consultation Booking Website",
-    "Corporate Website",
-    "Multilingual Website",
-    "Tailwind CSS",
-    "TypeScript",
+    "مكتب محاماة",
+    "استشارات قانونية",
+    "محامي",
+    "فيرمن",
+    "Firmen",
+    "Law Firm",
+    "Legal Services",
+    "Legal Consultation",
+    "الملكية الفكرية",
+    "الترجمة القانونية",
   ],
 
   openGraph: {
-    title: "Adex | Modern Law Firm Website",
+    title: "Firmen | فيرمن - مكتب محاماة متخصص",
     description:
-      "A professional law firm website with consultation booking, blog system, dark mode, and multilingual support.",
-    url: "https://adex-law.vercel.app",
-    siteName: "Adex",
+      "مكتب محاماة متخصص يقدم خدمات قانونية متميزة. Professional law firm with exceptional legal services.",
+    url: "https://firmen-law.vercel.app",
+    siteName: "Firmen | فيرمن",
     images: [
       {
-        url: "https://adex-law.vercel.app/opengraph-image.png",
+        url: "https://firmen-law.vercel.app/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Adex Law Firm Website – Professional Legal Web Design",
+        alt: "Firmen - فيرمن مكتب محاماة متخصص",
       },
     ],
-    locale: "en_US",
+    locale: "ar_SA",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Adex | Modern Law Firm Website",
+    title: "Firmen | فيرمن - مكتب محاماة متخصص",
     description:
-      "Professional law firm website built with Next.js, featuring consultation booking and multilingual support.",
-    images: ["https://adex-law.vercel.app/opengraph-image.png"],
+      "مكتب محاماة متخصص يقدم خدمات قانونية متميزة. Professional law firm with exceptional legal services.",
+    images: ["https://firmen-law.vercel.app/opengraph-image.png"],
   },
 };
 

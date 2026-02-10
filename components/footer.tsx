@@ -11,11 +11,10 @@ import {
   Instagram,
   ArrowRight,
   ArrowLeft,
+  Scale,
 } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
-import Image from "next/image";
-import darkLogo from "@/assets/logos/dark-logo-icon.png";
 import { motion } from "framer-motion";
 
 export function Footer() {
@@ -36,6 +35,29 @@ export function Footer() {
     { name: getTranslation(locale, "termsOfService"), href: "/terms" },
   ];
 
+  const services = [
+    {
+      nameAr: "الاستشارات القانونية",
+      nameEn: "Legal Consultations",
+      href: "/services",
+    },
+    {
+      nameAr: "الترافع في المحاكم",
+      nameEn: "Court Representation",
+      href: "/services",
+    },
+    {
+      nameAr: "الترجمة القانونية",
+      nameEn: "Legal Translation",
+      href: "/services",
+    },
+    {
+      nameAr: "الملكية الفكرية",
+      nameEn: "Intellectual Property",
+      href: "/services",
+    },
+  ];
+
   const socialLinks = [
     { name: "Facebook", href: "#", icon: Facebook },
     { name: "Twitter", href: "#", icon: Twitter },
@@ -44,7 +66,28 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-background border-t border-border">
+    <footer className="bg-[#050d1a] border-t border-border">
+      {/* Legal Quote Banner */}
+      <div className="border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <motion.div
+            className="flex items-center justify-center gap-4 text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Scale className="w-5 h-5 text-accent shrink-0" />
+            <p className="text-foreground/80 text-sm lg:text-base font-serif italic">
+              {locale === "ar"
+                ? "العدل دولة و قوة، و عزة، و ضمان استقرار و ازدهار"
+                : "Justice is a state of power, glory, and a guarantee of stability and prosperity"}
+            </p>
+            <Scale className="w-5 h-5 text-accent shrink-0" />
+          </motion.div>
+        </div>
+      </div>
+
       {/* Main Footer Content */}
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
@@ -58,41 +101,27 @@ export function Footer() {
           >
             {/* Logo */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-accent flex items-center justify-center">
-                <Image
-                  src={darkLogo}
-                  alt="Adlex Logo"
-                  width={28}
-                  height={28}
-                  className="w-7 h-7"
-                />
+              <div className="relative w-12 h-12 flex items-center justify-center">
+                <div className="absolute inset-0 bg-accent/20 rounded-lg rotate-45"></div>
+                <span className="relative text-accent font-bold text-xl">
+                  ف
+                </span>
               </div>
-              {locale === "ar" ? (
-                <div className="flex flex-col">
-                  <span className="text-xl font-bold text-foreground tracking-wide leading-none font-serif">
-                    أديـ<span className="text-accent">كـس</span>
-                  </span>
-                  <span className="text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-1 uppercase">
-                    استشارات قانونية
-                  </span>
-                </div>
-              ) : (
-                <div className="flex flex-col">
-                  <span className="text-xl font-bold text-foreground tracking-[0.2em] leading-none uppercase font-serif">
-                    AD<span className="text-accent">LEX</span>
-                  </span>
-                  <span className="text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-1 uppercase">
-                    Legal Counsel
-                  </span>
-                </div>
-              )}
+              <div className="flex flex-col">
+                <span className="text-xl font-bold text-foreground tracking-wide leading-none">
+                  {locale === "ar" ? "فيرمن" : "Firmen"}
+                </span>
+                <span className="text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-1 uppercase">
+                  {locale === "ar" ? "مكتب محاماة" : "Law Firm"}
+                </span>
+              </div>
             </div>
 
             {/* Description */}
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               {locale === "ar"
-                ? "نقدم خدمات قانونية متميزة بخبرة واسعة ونزاهة مهنية عالية. نحن هنا لحماية حقوقكم."
-                : "We provide exceptional legal services with extensive experience and high professional integrity."}
+                ? "نقدم خدمات قانونية متميزة بخبرة واسعة ونزاهة مهنية عالية. نحن هنا لحماية حقوقكم ومصالحكم."
+                : "We provide exceptional legal services with extensive experience and high professional integrity. We are here to protect your rights."}
             </p>
 
             {/* Social Links */}
@@ -103,7 +132,7 @@ export function Footer() {
                   <Link
                     key={social.name}
                     href={social.href}
-                    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-200"
+                    className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-200"
                   >
                     <Icon className="h-4 w-4" />
                     <span className="sr-only">{social.name}</span>
@@ -138,7 +167,7 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Legal Links */}
+          {/* Services Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -146,17 +175,17 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-sm font-bold text-foreground tracking-wide uppercase mb-6">
-              {locale === "ar" ? "قانوني" : "Legal"}
+              {locale === "ar" ? "خدماتنا" : "Our Services"}
             </h3>
             <ul className="space-y-3">
-              {legalLinks.map((link) => (
-                <li key={link.name}>
+              {services.map((service) => (
+                <li key={service.nameEn}>
                   <Link
-                    href={link.href}
+                    href={service.href}
                     className="text-muted-foreground hover:text-accent transition-colors duration-200 text-sm flex items-center gap-2 group"
                   >
                     <ArrowIcon className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                    {link.name}
+                    {locale === "ar" ? service.nameAr : service.nameEn}
                   </Link>
                 </li>
               ))}
@@ -179,7 +208,7 @@ export function Footer() {
                   href="tel:+966501234567"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
                 >
-                  <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center">
+                  <div className="w-8 h-8 border border-border flex items-center justify-center">
                     <Phone className="h-4 w-4" />
                   </div>
                   <span dir="ltr">+966 50 123 4567</span>
@@ -187,18 +216,18 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@adlex.com"
+                  href="mailto:info@firmen-law.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
                 >
-                  <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center">
+                  <div className="w-8 h-8 border border-border flex items-center justify-center">
                     <Mail className="h-4 w-4" />
                   </div>
-                  <span>info@adlex.com</span>
+                  <span>info@firmen-law.com</span>
                 </a>
               </li>
               <li>
                 <div className="flex items-center gap-3 text-muted-foreground text-sm">
-                  <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 border border-border flex items-center justify-center shrink-0">
                     <MapPin className="h-4 w-4" />
                   </div>
                   <span>
@@ -218,7 +247,7 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-xs text-center sm:text-start">
-              © {currentYear} {locale === "ar" ? "أديـكس" : "ADLEX"}.{" "}
+              © {currentYear} {locale === "ar" ? "فيرمن" : "Firmen"}.{" "}
               {getTranslation(locale, "copyright")}
             </p>
             <div className="flex items-center gap-6">
