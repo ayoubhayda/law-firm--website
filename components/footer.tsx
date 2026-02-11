@@ -68,9 +68,11 @@ export function Footer() {
 
   return (
     <footer className="bg-[#050d1a] border-t border-border">
-      {/* Legal Quote Banner */}
+      {/* ========================================= */}
+      {/* Legal Quote Banner — All Breakpoints      */}
+      {/* ========================================= */}
       <div className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:py-10 lg:py-14 sm:px-6 lg:px-8">
           <motion.div
             className="flex flex-col items-center text-center max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 15 }}
@@ -79,193 +81,365 @@ export function Footer() {
             transition={{ duration: 0.8 }}
           >
             {/* Decorative top line */}
-            <div className="flex items-center gap-3 mb-6">
-              <span className="w-8 h-px bg-accent/40" />
-              <Scale className="w-4 h-4 text-accent/60" />
-              <span className="w-8 h-px bg-accent/40" />
+            <div className="flex items-center gap-3 mb-4 md:mb-6">
+              <span className="w-6 md:w-8 h-px bg-accent/40" />
+              <Scale className="w-3.5 h-3.5 md:w-4 md:h-4 text-accent/60" />
+              <span className="w-6 md:w-8 h-px bg-accent/40" />
             </div>
 
             {/* Quote */}
             <blockquote className="relative">
-              <span className="absolute -top-4 -start-2 sm:-start-4 text-accent/20 text-5xl sm:text-6xl font-serif leading-none select-none">
+              <span className="absolute -top-4 -start-2 sm:-start-4 text-accent/20 text-4xl sm:text-5xl lg:text-6xl font-serif leading-none select-none">
                 &ldquo;
               </span>
-              <p className="text-foreground/90 text-base sm:text-lg lg:text-xl font-serif italic leading-relaxed tracking-wide px-4">
+              <p className="text-foreground/90 text-sm sm:text-base lg:text-xl font-serif italic leading-relaxed tracking-wide px-4">
                 {locale === "ar"
                   ? "حيثما ينتهي القانون، يبدأ الطغيان"
                   : "Where law ends, tyranny begins"}
               </p>
-              <span className="absolute -bottom-6 -end-2 sm:-end-4 text-accent/20 text-5xl sm:text-6xl font-serif leading-none select-none">
+              <span className="absolute -bottom-6 -end-2 sm:-end-4 text-accent/20 text-4xl sm:text-5xl lg:text-6xl font-serif leading-none select-none">
                 &rdquo;
               </span>
             </blockquote>
 
             {/* Author */}
-            <div className="mt-6 flex items-center gap-2">
-              <span className="w-5 h-px bg-accent/30" />
-              <span className="text-accent/70 text-xs tracking-[0.2em] uppercase font-medium">
+            <div className="mt-5 md:mt-6 flex items-center gap-2">
+              <span className="w-4 md:w-5 h-px bg-accent/30" />
+              <span className="text-accent/70 text-[10px] md:text-xs tracking-[0.2em] uppercase font-medium">
                 {locale === "ar" ? "جون لوك" : "John Locke"}
               </span>
-              <span className="w-5 h-px bg-accent/30" />
+              <span className="w-4 md:w-5 h-px bg-accent/30" />
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Main Footer Content */}
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-          {/* Brand Column */}
+      {/* ========================================= */}
+      {/* MOBILE Footer (< md) — Minimal & Centered */}
+      {/* ========================================= */}
+      <div className="md:hidden">
+        <div className="px-4 py-10">
           <motion.div
-            className="lg:col-span-1"
+            className="flex flex-col items-center text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Logo - Same as Navbar */}
-            <div className="flex items-center gap-3 mb-6">
-              <Image src={Logo} alt="Firmen Logo" width={35} height={35} />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold text-foreground tracking-wide leading-none">
-                  {locale === "ar" ? "فيرمن" : "Firmen"}
-                </span>
-                <span className="text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-1 uppercase">
-                  {locale === "ar" ? "مكتب محاماة" : "Law Office"}
-                </span>
-              </div>
+            {/* Logo — Centered */}
+            <div className="flex flex-col items-center mb-6">
+              <Image src={Logo} alt="Firmen Logo" width={40} height={40} />
+              <span className="text-lg font-bold text-foreground tracking-wide mt-2">
+                {locale === "ar" ? "فيرمن" : "Firmen"}
+              </span>
+              <span className="text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-0.5 uppercase">
+                {locale === "ar" ? "مكتب محاماة" : "Law Office"}
+              </span>
             </div>
 
-            {/* Description */}
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              {locale === "ar"
-                ? "مكتب المحامي عبدالرحمن الهرمودي للمحاماة والاستشارات القانونية في دبي. نقدم خدمات قانونية متميزة بخبرة واسعة ونزاهة مهنية عالية."
-                : "The Law Office of Abdulrahman Al-Harmoudi for Legal Practice and Consultation in Dubai. We provide exceptional legal services with extensive experience and professional integrity."}
-            </p>
-
-            {/* Social Links */}
-            <div className="flex gap-3">
+            {/* Social Icons — Centered Row */}
+            <div className="flex items-center gap-3 mb-8">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
                   <Link
                     key={social.name}
                     href={social.href}
-                    className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-200"
+                    className="w-9 h-9 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-200"
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-3.5 w-3.5" />
                     <span className="sr-only">{social.name}</span>
                   </Link>
                 );
               })}
             </div>
-          </motion.div>
 
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <h3 className="text-sm font-bold text-foreground tracking-wide uppercase mb-6">
-              {locale === "ar" ? "روابط سريعة" : "Quick Links"}
-            </h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground hover:text-accent transition-colors duration-200 text-sm flex items-center gap-2 group"
-                  >
-                    <ArrowIcon className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+            {/* Decorative Divider */}
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-12 h-px bg-border" />
+              <span className="w-1.5 h-1.5 bg-accent/40 rotate-45" />
+              <span className="w-12 h-px bg-border" />
+            </div>
 
-          {/* Services Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-sm font-bold text-foreground tracking-wide uppercase mb-6">
-              {locale === "ar" ? "خدماتنا" : "Our Services"}
-            </h3>
-            <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.nameEn}>
-                  <Link
-                    href={service.href}
-                    className="text-muted-foreground hover:text-accent transition-colors duration-200 text-sm flex items-center gap-2 group"
-                  >
-                    <ArrowIcon className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
-                    {locale === "ar" ? service.nameAr : service.nameEn}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <h3 className="text-sm font-bold text-foreground tracking-wide uppercase mb-6">
-              {locale === "ar" ? "تواصل معنا" : "Contact Us"}
-            </h3>
-            <ul className="space-y-4">
-              <li>
-                <a
-                  href="tel:+971501234567"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
-                >
-                  <div className="w-8 h-8 border border-border flex items-center justify-center">
-                    <Phone className="h-4 w-4" />
-                  </div>
-                  <span dir="ltr">+971 50 123 4567</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@firmen-law.ae"
-                  className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
-                >
-                  <div className="w-8 h-8 border border-border flex items-center justify-center">
-                    <Mail className="h-4 w-4" />
-                  </div>
-                  <span>info@firmen-law.ae</span>
-                </a>
-              </li>
-              <li>
-                <div className="flex items-center gap-3 text-muted-foreground text-sm">
-                  <div className="w-8 h-8 border border-border flex items-center justify-center shrink-0">
-                    <MapPin className="h-4 w-4" />
-                  </div>
-                  <span>
-                    {locale === "ar"
-                      ? "دبي، الإمارات العربية المتحدة"
-                      : "Dubai, United Arab Emirates"}
-                  </span>
-                </div>
-              </li>
-            </ul>
+            {/* Contact — Minimal: Phone & Email only */}
+            <div className="flex flex-col items-center gap-4">
+              <a
+                href="tel:+971501234567"
+                className="flex items-center gap-2.5 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
+              >
+                <Phone className="h-3.5 w-3.5 text-accent/60" />
+                <span dir="ltr">+971 50 123 4567</span>
+              </a>
+              <a
+                href="mailto:info@firmen-law.ae"
+                className="flex items-center gap-2.5 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
+              >
+                <Mail className="h-3.5 w-3.5 text-accent/60" />
+                <span>info@firmen-law.ae</span>
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Copyright Bar */}
+      {/* ========================================= */}
+      {/* TABLET Footer (md to lg) — 2-Col Compact  */}
+      {/* ========================================= */}
+      <div className="hidden md:block lg:hidden">
+        <div className="mx-auto max-w-7xl px-6 py-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Top Row: Brand + Contact side by side */}
+            <div className="grid grid-cols-2 gap-10 mb-10">
+              {/* Brand Column */}
+              <div>
+                {/* Logo */}
+                <div className="flex items-center gap-3 mb-5">
+                  <Image src={Logo} alt="Firmen Logo" width={32} height={32} />
+                  <div className="flex flex-col">
+                    <span className="text-lg font-bold text-foreground tracking-wide leading-none">
+                      {locale === "ar" ? "فيرمن" : "Firmen"}
+                    </span>
+                    <span className="text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-0.5 uppercase">
+                      {locale === "ar" ? "مكتب محاماة" : "Law Office"}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Short Description */}
+                <p className="text-muted-foreground text-sm leading-relaxed mb-5">
+                  {locale === "ar"
+                    ? "مكتب المحامي عبدالرحمن الهرمودي للمحاماة والاستشارات القانونية في دبي."
+                    : "The Law Office of Abdulrahman Al-Harmoudi for Legal Practice and Consultation in Dubai."}
+                </p>
+
+                {/* Social Links */}
+                <div className="flex gap-2.5">
+                  {socialLinks.map((social) => {
+                    const Icon = social.icon;
+                    return (
+                      <Link
+                        key={social.name}
+                        href={social.href}
+                        className="w-9 h-9 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-200"
+                      >
+                        <Icon className="h-3.5 w-3.5" />
+                        <span className="sr-only">{social.name}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Contact Column */}
+              <div>
+                <h3 className="text-sm font-bold text-foreground tracking-wide uppercase mb-5">
+                  {locale === "ar" ? "تواصل معنا" : "Contact Us"}
+                </h3>
+                <ul className="space-y-3.5">
+                  <li>
+                    <a
+                      href="tel:+971501234567"
+                      className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
+                    >
+                      <div className="w-8 h-8 border border-border flex items-center justify-center">
+                        <Phone className="h-4 w-4" />
+                      </div>
+                      <span dir="ltr">+971 50 123 4567</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="mailto:info@firmen-law.ae"
+                      className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
+                    >
+                      <div className="w-8 h-8 border border-border flex items-center justify-center">
+                        <Mail className="h-4 w-4" />
+                      </div>
+                      <span>info@firmen-law.ae</span>
+                    </a>
+                  </li>
+                  <li>
+                    <div className="flex items-center gap-3 text-muted-foreground text-sm">
+                      <div className="w-8 h-8 border border-border flex items-center justify-center shrink-0">
+                        <MapPin className="h-4 w-4" />
+                      </div>
+                      <span>
+                        {locale === "ar"
+                          ? "دبي، الإمارات العربية المتحدة"
+                          : "Dubai, United Arab Emirates"}
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* ========================================= */}
+      {/* DESKTOP Footer (lg+) — Full 4-Column Grid */}
+      {/* ========================================= */}
+      <div className="hidden lg:block">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+          <div className="grid grid-cols-4 gap-12">
+            {/* Brand Column */}
+            <motion.div
+              className="col-span-1"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              {/* Logo */}
+              <div className="flex items-center gap-3 mb-6">
+                <Image src={Logo} alt="Firmen Logo" width={35} height={35} />
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold text-foreground tracking-wide leading-none">
+                    {locale === "ar" ? "فيرمن" : "Firmen"}
+                  </span>
+                  <span className="text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-1 uppercase">
+                    {locale === "ar" ? "مكتب محاماة" : "Law Office"}
+                  </span>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                {locale === "ar"
+                  ? "مكتب المحامي عبدالرحمن الهرمودي للمحاماة والاستشارات القانونية في دبي."
+                  : "The Law Office of Abdulrahman Al-Harmoudi for Legal Practice and Consultation in Dubai."}
+              </p>
+
+              {/* Social Links */}
+              <div className="flex gap-3">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <Link
+                      key={social.name}
+                      href={social.href}
+                      className="w-10 h-10 border border-border flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent transition-colors duration-200"
+                    >
+                      <Icon className="h-4 w-4" />
+                      <span className="sr-only">{social.name}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <h3 className="text-sm font-bold text-foreground tracking-wide uppercase mb-6">
+                {locale === "ar" ? "روابط سريعة" : "Quick Links"}
+              </h3>
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-muted-foreground hover:text-accent transition-colors duration-200 text-sm flex items-center gap-2 group"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Services Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h3 className="text-sm font-bold text-foreground tracking-wide uppercase mb-6">
+                {locale === "ar" ? "خدماتنا" : "Our Services"}
+              </h3>
+              <ul className="space-y-3">
+                {services.map((service) => (
+                  <li key={service.nameEn}>
+                    <Link
+                      href={service.href}
+                      className="text-muted-foreground hover:text-accent transition-colors duration-200 text-sm flex items-center gap-2 group"
+                    >
+                      {locale === "ar" ? service.nameAr : service.nameEn}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h3 className="text-sm font-bold text-foreground tracking-wide uppercase mb-6">
+                {locale === "ar" ? "تواصل معنا" : "Contact Us"}
+              </h3>
+              <ul className="space-y-4">
+                <li>
+                  <a
+                    href="tel:+971501234567"
+                    className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
+                  >
+                    <div className="w-8 h-8 border border-border flex items-center justify-center">
+                      <Phone className="h-4 w-4" />
+                    </div>
+                    <span dir="ltr">+971 50 123 4567</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:info@firmen-law.ae"
+                    className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
+                  >
+                    <div className="w-8 h-8 border border-border flex items-center justify-center">
+                      <Mail className="h-4 w-4" />
+                    </div>
+                    <span>info@firmen-law.ae</span>
+                  </a>
+                </li>
+                <li>
+                  <div className="flex items-center gap-3 text-muted-foreground text-sm">
+                    <div className="w-8 h-8 border border-border flex items-center justify-center shrink-0">
+                      <MapPin className="h-4 w-4" />
+                    </div>
+                    <span>
+                      {locale === "ar"
+                        ? "دبي، الإمارات العربية المتحدة"
+                        : "Dubai, United Arab Emirates"}
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* ========================================= */}
+      {/* Copyright Bar — All Breakpoints           */}
+      {/* ========================================= */}
       <div className="border-t border-border">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-xs text-center sm:text-start">
+        <div className="mx-auto max-w-7xl px-4 py-5 md:py-6 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-3 md:flex-row md:justify-between md:gap-4">
+            <p className="text-muted-foreground text-xs text-center md:text-start">
               © {currentYear} {locale === "ar" ? "فيرمن" : "Firmen"}.{" "}
               {getTranslation(locale, "copyright")}
             </p>

@@ -2,7 +2,13 @@ import type React from "react";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Playfair_Display, Cairo } from "next/font/google";
+import {
+  Playfair_Display,
+  Cairo,
+  Aref_Ruqaa,
+  Cormorant_Garamond,
+  Cinzel,
+} from "next/font/google";
 import { LocaleProvider } from "@/hooks/use-locale-context";
 import "./globals.css";
 import { ClientLayout } from "@/components/client-layout";
@@ -19,6 +25,28 @@ const playfair = Playfair_Display({
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
   variable: "--font-cairo",
+  display: "swap",
+});
+
+const arefRuqaa = Aref_Ruqaa({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  variable: "--font-aref-ruqaa",
+  display: "swap",
+});
+
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-cinzel",
   display: "swap",
 });
 
@@ -77,7 +105,7 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" suppressHydrationWarning>
       <body
-        className={`font-sans antialiased ${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${cairo.variable}`}
+        className={`font-sans antialiased ${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${cairo.variable} ${arefRuqaa.variable} ${cormorantGaramond.variable} ${cinzel.variable}`}
         suppressHydrationWarning
       >
         <LocaleProvider>

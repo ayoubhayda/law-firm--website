@@ -45,6 +45,9 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-playfair);
+  --font-calligraphic: var(--font-aref-ruqaa);
+  --font-cormorant: var(--font-cormorant);
+  --font-cinzel: var(--font-cinzel);
   --font-arabic: var(--font-cairo);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -199,4 +202,3 @@
     box-shadow: 0 0 30px rgba(201, 169, 98, 0.1);
   }
 }
-
