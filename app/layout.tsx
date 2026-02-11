@@ -23,29 +23,29 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Firmen | فيرمن - مكتب محاماة متخصص",
+  title: "Firmen | فيرمن - مكتب محاماة في الإمارات",
   description:
-    "فيرمن - مكتب محاماة متخصص يقدم خدمات قانونية متميزة تشمل الاستشارات القانونية، الترجمة القانونية، الملكية الفكرية، والتمثيل في المحاكم. Firmen - Professional law firm providing exceptional legal services.",
+    "فيرمن - مكتب المحامي عبدالرحمن الهرمودي للمحاماة والاستشارات القانونية في دبي، الإمارات العربية المتحدة. خدمات قانونية متميزة تشمل الاستشارات القانونية، القانون التجاري، العقارات، والتمثيل أمام المحاكم. Firmen - The Law Office of Abdulrahman Al-Harmoudi in Dubai, UAE.",
 
   metadataBase: new URL("https://firmen-law.vercel.app"),
 
   keywords: [
-    "مكتب محاماة",
+    "مكتب محاماة دبي",
+    "محامي في الإمارات",
     "استشارات قانونية",
-    "محامي",
     "فيرمن",
     "Firmen",
-    "Law Firm",
-    "Legal Services",
-    "Legal Consultation",
-    "الملكية الفكرية",
-    "الترجمة القانونية",
+    "عبدالرحمن الهرمودي",
+    "Law Firm Dubai",
+    "Legal Services UAE",
+    "Legal Consultation Dubai",
+    "محامي دبي",
   ],
 
   openGraph: {
-    title: "Firmen | فيرمن - مكتب محاماة متخصص",
+    title: "Firmen | فيرمن - مكتب محاماة في الإمارات",
     description:
-      "مكتب محاماة متخصص يقدم خدمات قانونية متميزة. Professional law firm with exceptional legal services.",
+      "مكتب المحامي عبدالرحمن الهرمودي - خدمات قانونية متميزة في دبي. The Law Office of Abdulrahman Al-Harmoudi - Premium Legal Services in Dubai.",
     url: "https://firmen-law.vercel.app",
     siteName: "Firmen | فيرمن",
     images: [
@@ -53,18 +53,18 @@ export const metadata: Metadata = {
         url: "https://firmen-law.vercel.app/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Firmen - فيرمن مكتب محاماة متخصص",
+        alt: "Firmen - فيرمن مكتب محاماة في الإمارات",
       },
     ],
-    locale: "ar_SA",
+    locale: "ar_AE",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Firmen | فيرمن - مكتب محاماة متخصص",
+    title: "Firmen | فيرمن - مكتب محاماة في الإمارات",
     description:
-      "مكتب محاماة متخصص يقدم خدمات قانونية متميزة. Professional law firm with exceptional legal services.",
+      "مكتب المحامي عبدالرحمن الهرمودي - خدمات قانونية متميزة في دبي. Premium Legal Services in Dubai, UAE.",
     images: ["https://firmen-law.vercel.app/opengraph-image.png"],
   },
 };

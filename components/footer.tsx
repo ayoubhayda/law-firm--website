@@ -16,6 +16,8 @@ import {
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Logo from "@/assets/logos/FIRMEN-LOGO.png";
 
 export function Footer() {
   const { locale } = useLocale();
@@ -23,7 +25,6 @@ export function Footer() {
   const ArrowIcon = locale === "ar" ? ArrowLeft : ArrowRight;
 
   const quickLinks = [
-    { name: getTranslation(locale, "home"), href: "/" },
     { name: getTranslation(locale, "about"), href: "/about" },
     { name: getTranslation(locale, "services"), href: "/services" },
     { name: getTranslation(locale, "blog"), href: "/blog" },
@@ -42,18 +43,18 @@ export function Footer() {
       href: "/services",
     },
     {
-      nameAr: "الترافع في المحاكم",
+      nameAr: "الترافع أمام المحاكم",
       nameEn: "Court Representation",
       href: "/services",
     },
     {
-      nameAr: "الترجمة القانونية",
-      nameEn: "Legal Translation",
+      nameAr: "القانون التجاري",
+      nameEn: "Business Law",
       href: "/services",
     },
     {
-      nameAr: "الملكية الفكرية",
-      nameEn: "Intellectual Property",
+      nameAr: "العقارات والتطوير",
+      nameEn: "Real Estate & Development",
       href: "/services",
     },
   ];
@@ -69,21 +70,44 @@ export function Footer() {
     <footer className="bg-[#050d1a] border-t border-border">
       {/* Legal Quote Banner */}
       <div className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
           <motion.div
-            className="flex items-center justify-center gap-4 text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            className="flex flex-col items-center text-center max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <Scale className="w-5 h-5 text-accent shrink-0" />
-            <p className="text-foreground/80 text-sm lg:text-base font-serif italic">
-              {locale === "ar"
-                ? "العدل دولة و قوة، و عزة، و ضمان استقرار و ازدهار"
-                : "Justice is a state of power, glory, and a guarantee of stability and prosperity"}
-            </p>
-            <Scale className="w-5 h-5 text-accent shrink-0" />
+            {/* Decorative top line */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-8 h-px bg-accent/40" />
+              <Scale className="w-4 h-4 text-accent/60" />
+              <span className="w-8 h-px bg-accent/40" />
+            </div>
+
+            {/* Quote */}
+            <blockquote className="relative">
+              <span className="absolute -top-4 -start-2 sm:-start-4 text-accent/20 text-5xl sm:text-6xl font-serif leading-none select-none">
+                &ldquo;
+              </span>
+              <p className="text-foreground/90 text-base sm:text-lg lg:text-xl font-serif italic leading-relaxed tracking-wide px-4">
+                {locale === "ar"
+                  ? "حيثما ينتهي القانون، يبدأ الطغيان"
+                  : "Where law ends, tyranny begins"}
+              </p>
+              <span className="absolute -bottom-6 -end-2 sm:-end-4 text-accent/20 text-5xl sm:text-6xl font-serif leading-none select-none">
+                &rdquo;
+              </span>
+            </blockquote>
+
+            {/* Author */}
+            <div className="mt-6 flex items-center gap-2">
+              <span className="w-5 h-px bg-accent/30" />
+              <span className="text-accent/70 text-xs tracking-[0.2em] uppercase font-medium">
+                {locale === "ar" ? "جون لوك" : "John Locke"}
+              </span>
+              <span className="w-5 h-px bg-accent/30" />
+            </div>
           </motion.div>
         </div>
       </div>
@@ -99,20 +123,15 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Logo */}
+            {/* Logo - Same as Navbar */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="relative w-12 h-12 flex items-center justify-center">
-                <div className="absolute inset-0 bg-accent/20 rounded-lg rotate-45"></div>
-                <span className="relative text-accent font-bold text-xl">
-                  ف
-                </span>
-              </div>
+              <Image src={Logo} alt="Firmen Logo" width={35} height={35} />
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-foreground tracking-wide leading-none">
                   {locale === "ar" ? "فيرمن" : "Firmen"}
                 </span>
                 <span className="text-[9px] text-muted-foreground font-medium tracking-[0.15em] mt-1 uppercase">
-                  {locale === "ar" ? "مكتب محاماة" : "Law Firm"}
+                  {locale === "ar" ? "مكتب محاماة" : "Law Office"}
                 </span>
               </div>
             </div>
@@ -120,8 +139,8 @@ export function Footer() {
             {/* Description */}
             <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               {locale === "ar"
-                ? "نقدم خدمات قانونية متميزة بخبرة واسعة ونزاهة مهنية عالية. نحن هنا لحماية حقوقكم ومصالحكم."
-                : "We provide exceptional legal services with extensive experience and high professional integrity. We are here to protect your rights."}
+                ? "مكتب المحامي عبدالرحمن الهرمودي للمحاماة والاستشارات القانونية في دبي. نقدم خدمات قانونية متميزة بخبرة واسعة ونزاهة مهنية عالية."
+                : "The Law Office of Abdulrahman Al-Harmoudi for Legal Practice and Consultation in Dubai. We provide exceptional legal services with extensive experience and professional integrity."}
             </p>
 
             {/* Social Links */}
@@ -205,24 +224,24 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+966501234567"
+                  href="tel:+971501234567"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
                 >
                   <div className="w-8 h-8 border border-border flex items-center justify-center">
                     <Phone className="h-4 w-4" />
                   </div>
-                  <span dir="ltr">+966 50 123 4567</span>
+                  <span dir="ltr">+971 50 123 4567</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@firmen-law.com"
+                  href="mailto:info@firmen-law.ae"
                   className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors duration-200 text-sm"
                 >
                   <div className="w-8 h-8 border border-border flex items-center justify-center">
                     <Mail className="h-4 w-4" />
                   </div>
-                  <span>info@firmen-law.com</span>
+                  <span>info@firmen-law.ae</span>
                 </a>
               </li>
               <li>
@@ -232,8 +251,8 @@ export function Footer() {
                   </div>
                   <span>
                     {locale === "ar"
-                      ? "الرياض، المملكة العربية السعودية"
-                      : "Riyadh, Saudi Arabia"}
+                      ? "دبي، الإمارات العربية المتحدة"
+                      : "Dubai, United Arab Emirates"}
                   </span>
                 </div>
               </li>

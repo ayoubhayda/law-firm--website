@@ -33,20 +33,20 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: 1,
-    slug: "family-law-guide-saudi-arabia",
-    titleAr: "دليل شامل لقانون الأسرة في السعودية",
-    titleEn: "Complete Guide to Family Law in Saudi Arabia",
+    slug: "family-law-guide-uae",
+    titleAr: "دليل شامل لقانون الأسرة في الإمارات",
+    titleEn: "Complete Guide to Family Law in the UAE",
     excerptAr:
-      "دليل شامل ومفصل لقانون الأسرة في المملكة العربية السعودية، يتضمن شرحاً وافياً لأهم القوانين والإجراءات المتعلقة بقضايا الأسرة والزواج والطلاق وحضانة الأطفال والنفقة والميراث. يغطي هذا الدليل جميع الجوانب القانونية التي يحتاجها المواطنون والمقيمون عند التعامل مع القضايا الأسرية، مع شرح مفصل لحقوق وواجبات كل طرف في العلاقة الزوجية والأسرية، وأهم الإجراءات القانونية المطلوبة في كل حالة.",
+      "دليل شامل ومفصل لقانون الأسرة في دولة الإمارات العربية المتحدة، يتضمن شرحاً وافياً لأهم القوانين والإجراءات المتعلقة بقضايا الأسرة والزواج والطلاق وحضانة الأطفال والنفقة والميراث. يغطي هذا الدليل جميع الجوانب القانونية التي يحتاجها المواطنون والمقيمون عند التعامل مع القضايا الأسرية، مع شرح مفصل لحقوق وواجبات كل طرف في العلاقة الزوجية والأسرية، وأهم الإجراءات القانونية المطلوبة في كل حالة.",
     excerptEn:
-      "A comprehensive and detailed guide to family law in Saudi Arabia, including thorough explanations of the most important laws and procedures related to family, marriage, divorce, child custody, maintenance, and inheritance cases. This guide covers all legal aspects that citizens and residents need when dealing with family matters, with detailed explanations of the rights and obligations of each party in marital and family relationships, and the most important legal procedures required in each case.",
+      "A comprehensive and detailed guide to family law in the UAE, including thorough explanations of the most important laws and procedures related to family, marriage, divorce, child custody, maintenance, and inheritance cases. This guide covers all legal aspects that citizens and residents need when dealing with family matters, with detailed explanations of the rights and obligations of each party in marital and family relationships, and the most important legal procedures required in each case.",
     category: "family",
     categoryName: "قانون الأسرة / Family Law",
     date: "2024-01-15",
     readTimeAr: "5 دقائق",
     readTimeEn: "5 min read",
-    authorAr: "المحامي أحمد الراشد",
-    authorEn: "Lawyer Ahmed Al-Rashid",
+    authorAr: "المحامي عبدالرحمن الهرمودي",
+    authorEn: "Lawyer Abdulrahman Al-Harmoudi",
     image: blog_1.src,
     content: {
       ar: `
@@ -308,13 +308,13 @@ export const articles: Article[] = [
         
         <div class="family-law-article">
           <div class="article-header">
-            <h1 class="article-title">دليل شامل لقانون الأسرة في السعودية</h1>
-            <p class="article-subtitle">دليل شامل ومفصل لقانون الأسرة في المملكة العربية السعودية</p>
+            <h1 class="article-title">دليل شامل لقانون الأسرة في الإمارات</h1>
+            <p class="article-subtitle">دليل شامل ومفصل لقانون الأسرة في دولة الإمارات العربية المتحدة</p>
           </div>
 
           <div class="section">
             <h2>مقدمة عن قانون الأسرة السعودي</h2>
-            <p>يستند قانون الأسرة في المملكة العربية السعودية إلى أحكام الشريعة الإسلامية ومبادئها، ويشمل جميع القوانين والأنظمة المتعلقة بالزواج والطلاق وحضانة الأطفال والنفقة والميراث. يهدف هذا القانون إلى حماية الأسرة وضمان حقوق جميع أفرادها وفقاً للمبادئ الإسلامية والقيم الاجتماعية.</p>
+            <p>يستند قانون الأسرة في دولة الإمارات العربية المتحدة إلى أحكام الشريعة الإسلامية ومبادئها، ويشمل جميع القوانين والأنظمة المتعلقة بالزواج والطلاق وحضانة الأطفال والنفقة والميراث. يهدف هذا القانون إلى حماية الأسرة وضمان حقوق جميع أفرادها وفقاً للمبادئ الإسلامية والقيم الاجتماعية.</p>
             
             <div class="highlight-box">
               <h3>أهداف قانون الأسرة</h3>
@@ -329,10 +329,10 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>الزواج في القانون السعودي</h2>
+            <h2>الزواج في القانون الإماراتي</h2>
             
             <h3>شروط الزواج</h3>
-            <p>يجب توفر عدة شروط لصحة عقد الزواج في السعودية:</p>
+            <p>يجب توفر عدة شروط لصحة عقد الزواج في الإمارات:</p>
             
             <div class="rights-obligations">
               <div class="rights-box">
@@ -369,8 +369,8 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>الطلاق في القانون السعودي</h2>
-            <p>ينظم القانون السعودي إجراءات الطلاق وحقوق الطرفين والأطفال في هذه الحالة.</p>
+            <h2>الطلاق في القانون الإماراتي</h2>
+            <p>ينظم القانون الإماراتي إجراءات الطلاق وحقوق الطرفين والأطفال في هذه الحالة.</p>
             
             <h3>أنواع الطلاق</h3>
             <table class="comparison-table">
@@ -413,7 +413,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>حضانة الأطفال</h2>
-            <p>تنظم أحكام الحضانة في القانون السعودي رعاية الأطفال بعد الطلاق أو وفاة أحد الوالدين.</p>
+            <p>تنظم أحكام الحضانة في القانون الإماراتي رعاية الأطفال بعد الطلاق أو وفاة أحد الوالدين.</p>
             
             <div class="rights-obligations">
               <div class="rights-box">
@@ -450,8 +450,8 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>النفقة في القانون السعودي</h2>
-            <p>تعتبر النفقة من الحقوق الأساسية في القانون السعودي وتشمل عدة أنواع.</p>
+            <h2>النفقة في القانون الإماراتي</h2>
+            <p>تعتبر النفقة من الحقوق الأساسية في القانون الإماراتي وتشمل عدة أنواع.</p>
             
             <h3>أنواع النفقة</h3>
             <table class="comparison-table">
@@ -493,8 +493,8 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>الميراث في القانون السعودي</h2>
-            <p>ينظم قانون الميراث في السعودية توزيع التركة وفقاً لأحكام الشريعة الإسلامية.</p>
+            <h2>الميراث في القانون الإماراتي</h2>
+            <p>ينظم قانون الميراث في الإمارات توزيع التركة وفقاً لأحكام الشريعة الإسلامية.</p>
             
             <h3>أركان الميراث</h3>
             <ol class="step-list">
@@ -532,7 +532,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>حل النزاعات الأسرية</h2>
-            <p>يوفر النظام السعودي آليات متعددة لحل النزاعات الأسرية بشكل سلمي وعادل.</p>
+            <p>يوفر النظام الإماراتي آليات متعددة لحل النزاعات الأسرية بشكل سلمي وعادل.</p>
             
             <h3>الوسائل الودية</h3>
             <ul>
@@ -839,13 +839,13 @@ export const articles: Article[] = [
         
         <div class="family-law-article">
           <div class="article-header">
-            <h1 class="article-title">Complete Guide to Family Law in Saudi Arabia</h1>
-            <p class="article-subtitle">Comprehensive and detailed guide to family law in the Kingdom of Saudi Arabia</p>
+            <h1 class="article-title">Complete Guide to Family Law in the UAE</h1>
+            <p class="article-subtitle">Comprehensive and detailed guide to family law in the United Arab Emirates</p>
           </div>
 
           <div class="section">
-            <h2>Introduction to Saudi Family Law</h2>
-            <p>Saudi family law is based on Islamic Sharia principles and includes all laws and regulations related to marriage, divorce, child custody, maintenance, and inheritance. This law aims to protect the family and ensure the rights of all its members according to Islamic principles and social values.</p>
+            <h2>Introduction to UAE Family Law</h2>
+            <p>UAE family law is based on Islamic Sharia principles and includes all laws and regulations related to marriage, divorce, child custody, maintenance, and inheritance. This law aims to protect the family and ensure the rights of all its members according to Islamic principles and social values.</p>
             
             <div class="highlight-box">
               <h3>Family Law Objectives</h3>
@@ -860,10 +860,10 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>Marriage in Saudi Law</h2>
+            <h2>Marriage in UAE Law</h2>
             
             <h3>Marriage Requirements</h3>
-            <p>Several conditions must be met for a valid marriage contract in Saudi Arabia:</p>
+            <p>Several conditions must be met for a valid marriage contract in the UAE:</p>
             
             <div class="rights-obligations">
               <div class="rights-box">
@@ -900,8 +900,8 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>Divorce in Saudi Law</h2>
-            <p>Saudi law regulates divorce procedures and the rights of both parties and children in this case.</p>
+            <h2>Divorce in UAE Law</h2>
+            <p>UAE law regulates divorce procedures and the rights of both parties and children in this case.</p>
             
             <h3>Types of Divorce</h3>
             <table class="comparison-table">
@@ -944,7 +944,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>Child Custody</h2>
-            <p>Custody provisions in Saudi law regulate child care after divorce or death of one parent.</p>
+            <p>Custody provisions in UAE law regulate child care after divorce or death of one parent.</p>
             
             <div class="rights-obligations">
               <div class="rights-box">
@@ -981,8 +981,8 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>Maintenance in Saudi Law</h2>
-            <p>Maintenance is considered a fundamental right in Saudi law and includes several types.</p>
+            <h2>Maintenance in UAE Law</h2>
+            <p>Maintenance is considered a fundamental right in UAE law and includes several types.</p>
             
             <h3>Types of Maintenance</h3>
             <table class="comparison-table">
@@ -1024,8 +1024,8 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>Inheritance in Saudi Law</h2>
-            <p>Inheritance law in Saudi Arabia regulates estate distribution according to Islamic Sharia provisions.</p>
+            <h2>Inheritance in UAE Law</h2>
+            <p>Inheritance law in the UAE regulates estate distribution according to Islamic Sharia provisions.</p>
             
             <h3>Inheritance Elements</h3>
             <ol class="step-list">
@@ -1063,7 +1063,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>Family Dispute Resolution</h2>
-            <p>The Saudi system provides multiple mechanisms for resolving family disputes peacefully and fairly.</p>
+            <p>The UAE system provides multiple mechanisms for resolving family disputes peacefully and fairly.</p>
             
             <h3>Amicable Methods</h3>
             <ul>
@@ -1115,13 +1115,13 @@ export const articles: Article[] = [
   },
   {
     id: 2,
-    slug: "company-establishment-saudi-arabia",
-    titleAr: "كيفية تأسيس شركة في السعودية",
-    titleEn: "How to Establish a Company in Saudi Arabia",
+    slug: "company-establishment-uae",
+    titleAr: "كيفية تأسيس شركة في الإمارات",
+    titleEn: "How to Establish a Company in the UAE",
     excerptAr:
-      "دليل شامل ومفصل لتأسيس الشركات في المملكة العربية السعودية، يتضمن خطوات مفصلة وواضحة لجميع أنواع الشركات مع شرح كامل للمتطلبات القانونية والإجراءات اللازمة. يغطي هذا الدليل جميع الجوانب العملية والنظرية لتأسيس الشركات، من اختيار نوع الشركة المناسب إلى الحصول على جميع التراخيص المطلوبة، مع نصائح عملية مهمة لضمان نجاح العملية وتجنب المشاكل القانونية المستقبلية.",
+      "دليل شامل ومفصل لتأسيس الشركات في دولة الإمارات العربية المتحدة، يتضمن خطوات مفصلة وواضحة لجميع أنواع الشركات مع شرح كامل للمتطلبات القانونية والإجراءات اللازمة. يغطي هذا الدليل جميع الجوانب العملية والنظرية لتأسيس الشركات، من اختيار نوع الشركة المناسب إلى الحصول على جميع التراخيص المطلوبة، مع نصائح عملية مهمة لضمان نجاح العملية وتجنب المشاكل القانونية المستقبلية.",
     excerptEn:
-      "A comprehensive and detailed guide to establishing companies in Saudi Arabia, including detailed and clear steps for all types of companies with complete explanations of legal requirements and necessary procedures. This guide covers all practical and theoretical aspects of company formation, from choosing the appropriate company type to obtaining all required licenses, with important practical tips to ensure process success and avoid future legal problems.",
+      "A comprehensive and detailed guide to establishing companies in the UAE, including detailed and clear steps for all types of companies with complete explanations of legal requirements and necessary procedures. This guide covers all practical and theoretical aspects of company formation, from choosing the appropriate company type to obtaining all required licenses, with important practical tips to ensure process success and avoid future legal problems.",
     content: {
       ar: `
         <style>
@@ -1382,16 +1382,16 @@ export const articles: Article[] = [
         
         <div class="company-article">
           <div class="article-header">
-            <h1 class="article-title">كيفية تأسيس شركة في السعودية</h1>
-            <p class="article-subtitle">دليل شامل لتأسيس الشركات وفق النظام السعودي</p>
+            <h1 class="article-title">كيفية تأسيس شركة في الإمارات</h1>
+            <p class="article-subtitle">دليل شامل لتأسيس الشركات وفق النظام الإماراتي</p>
           </div>
 
           <div class="section">
-            <h2>مقدمة عن تأسيس الشركات في السعودية</h2>
-            <p>تشهد المملكة العربية السعودية نهضة اقتصادية كبيرة في إطار رؤية 2030، مما جعل تأسيس الشركات أمراً أكثر سهولة ومرونة. ينظم نظام الشركات السعودي الجديد جميع إجراءات تأسيس الشركات ويوفر بيئة استثمارية جاذبة للمستثمرين المحليين والأجانب.</p>
+            <h2>مقدمة عن تأسيس الشركات في الإمارات</h2>
+            <p>تشهد دولة الإمارات العربية المتحدة نهضة اقتصادية كبيرة في إطار رؤية الإمارات 2030، مما جعل تأسيس الشركات أمراً أكثر سهولة ومرونة. ينظم نظام الشركات السعودي الجديد جميع إجراءات تأسيس الشركات ويوفر بيئة استثمارية جاذبة للمستثمرين المحليين والأجانب.</p>
             
             <div class="highlight-box">
-              <h3>مزايا تأسيس الشركات في السعودية</h3>
+              <h3>مزايا تأسيس الشركات في الإمارات</h3>
               <ul>
                 <li>اقتصاد قوي ومستقر</li>
                 <li>موقع جغرافي استراتيجي</li>
@@ -1404,8 +1404,8 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>أنواع الشركات في النظام السعودي</h2>
-            <p>يتيح النظام السعودي تأسيس عدة أنواع من الشركات حسب طبيعة النشاط وحجم رأس المال:</p>
+            <h2>أنواع الشركات في النظام الإماراتي</h2>
+            <p>يتيح النظام الإماراتي تأسيس عدة أنواع من الشركات حسب طبيعة النشاط وحجم رأس المال:</p>
             
             <div class="company-types">
               <div class="company-box">
@@ -1467,7 +1467,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>خطوات تأسيس الشركة</h2>
-            <p>يمكن تأسيس الشركة في السعودية من خلال الخطوات التالية:</p>
+            <p>يمكن تأسيس الشركة في الإمارات من خلال الخطوات التالية:</p>
             
             <ol class="step-list">
               <li><strong>اختيار اسم الشركة:</strong> التأكد من توفر الاسم وحجزه عبر منصة قراس</li>
@@ -1606,7 +1606,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>الخدمات الإلكترونية المتاحة</h2>
-            <p>توفر الحكومة السعودية عدة منصات إلكترونية لتسهيل إجراءات تأسيس الشركات:</p>
+            <p>توفر الحكومة الإماراتية عدة منصات إلكترونية لتسهيل إجراءات تأسيس الشركات:</p>
             
             <ul>
               <li><strong>منصة قراس:</strong> لحجز أسماء الشركات وإصدار السجلات التجارية</li>
@@ -1881,16 +1881,16 @@ export const articles: Article[] = [
         
         <div class="company-article">
           <div class="article-header">
-            <h1 class="article-title">How to Establish a Company in Saudi Arabia</h1>
-            <p class="article-subtitle">Comprehensive Guide to Company Formation under Saudi Law</p>
+            <h1 class="article-title">How to Establish a Company in the UAE</h1>
+            <p class="article-subtitle">Comprehensive Guide to Company Formation under UAE Law</p>
           </div>
 
           <div class="section">
-            <h2>Introduction to Company Formation in Saudi Arabia</h2>
-            <p>The Kingdom of Saudi Arabia is witnessing significant economic growth as part of Vision 2030, making company establishment easier and more flexible. The new Saudi Companies Law regulates all company formation procedures and provides an attractive investment environment for both local and foreign investors.</p>
+            <h2>Introduction to Company Formation in the UAE</h2>
+            <p>The United Arab Emirates is witnessing significant economic growth as part of Vision 2030, making company establishment easier and more flexible. The new UAE Companies Law regulates all company formation procedures and provides an attractive investment environment for both local and foreign investors.</p>
             
             <div class="highlight-box">
-              <h3>Advantages of Establishing Companies in Saudi Arabia</h3>
+              <h3>Advantages of Establishing Companies in the UAE</h3>
               <ul>
                 <li>Strong and stable economy</li>
                 <li>Strategic geographical location</li>
@@ -1903,8 +1903,8 @@ export const articles: Article[] = [
           </div>
 
           <div class="section">
-            <h2>Types of Companies in the Saudi System</h2>
-            <p>The Saudi system allows the establishment of several types of companies depending on the nature of activity and capital size:</p>
+            <h2>Types of Companies in the UAE System</h2>
+            <p>The UAE system allows the establishment of several types of companies depending on the nature of activity and capital size:</p>
             
             <div class="company-types">
               <div class="company-box">
@@ -1966,7 +1966,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>Company Formation Steps</h2>
-            <p>Companies can be established in Saudi Arabia through the following steps:</p>
+            <p>Companies can be established in the UAE through the following steps:</p>
             
             <ol class="step-list">
               <li><strong>Choose Company Name:</strong> Verify name availability and reserve it via Qeras platform</li>
@@ -1982,7 +1982,7 @@ export const articles: Article[] = [
           <div class="section">
             <h2>Requirements and Required Documents</h2>
             
-            <h3>For Saudi Founders</h3>
+            <h3>For UAE Founders</h3>
             <ul>
               <li>Copy of valid national ID</li>
               <li>Formation contract and articles of association</li>
@@ -2031,7 +2031,7 @@ export const articles: Article[] = [
                 </tr>
                 <tr>
                   <td>Financial Services</td>
-                  <td>Saudi Central Bank</td>
+                  <td>UAE Central Bank</td>
                   <td>60-90 days</td>
                 </tr>
                 <tr>
@@ -2105,7 +2105,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>Available Electronic Services</h2>
-            <p>The Saudi government provides several electronic platforms to facilitate company formation procedures:</p>
+            <p>The UAE government provides several electronic platforms to facilitate company formation procedures:</p>
             
             <ul>
               <li><strong>Qeras Platform:</strong> For reserving company names and issuing commercial registrations</li>
@@ -2127,19 +2127,19 @@ export const articles: Article[] = [
     date: "2024-01-10",
     readTimeAr: "7 دقائق",
     readTimeEn: "7 min read",
-    authorAr: "المحامي أحمد الراشد",
-    authorEn: "Lawyer Ahmed Al-Rashid",
+    authorAr: "المحامي عبدالرحمن الهرمودي",
+    authorEn: "Lawyer Abdulrahman Al-Harmoudi",
     image: blog_2.src,
   },
   {
     id: 3,
-    slug: "tenant-landlord-rights-saudi-law",
-    titleAr: "حقوق المستأجر والمؤجر في القانون السعودي",
-    titleEn: "Tenant and Landlord Rights in Saudi Law",
+    slug: "tenant-landlord-rights-uae-law",
+    titleAr: "حقوق المستأجر والمؤجر في القانون الإماراتي",
+    titleEn: "Tenant and Landlord Rights in UAE Law",
     excerptAr:
-      "دليل شامل ومفصل لحقوق وواجبات المستأجر والمؤجر وفقاً لنظام الإيجار الجديد في المملكة العربية السعودية، يتضمن شرحاً وافياً لجميع الأحكام القانونية المتعلقة بعقود الإيجار وزيادة الأجرة وإنهاء العقود وحل النزاعات. يغطي هذا الدليل جميع الجوانب القانونية التي يحتاجها المستأجرون والمؤجرون، مع شرح مفصل للآليات القانونية المتاحة لحماية حقوق كل طرف وضمان علاقة إيجارية ناجحة ومتوازنة.",
+      "دليل شامل ومفصل لحقوق وواجبات المستأجر والمؤجر وفقاً لنظام الإيجار الجديد في دولة الإمارات العربية المتحدة، يتضمن شرحاً وافياً لجميع الأحكام القانونية المتعلقة بعقود الإيجار وزيادة الأجرة وإنهاء العقود وحل النزاعات. يغطي هذا الدليل جميع الجوانب القانونية التي يحتاجها المستأجرون والمؤجرون، مع شرح مفصل للآليات القانونية المتاحة لحماية حقوق كل طرف وضمان علاقة إيجارية ناجحة ومتوازنة.",
     excerptEn:
-      "A comprehensive and detailed guide to tenant and landlord rights and obligations according to the new rental system in Saudi Arabia, including thorough explanations of all legal provisions related to lease contracts, rent increases, contract termination, and dispute resolution. This guide covers all legal aspects that tenants and landlords need, with detailed explanations of the legal mechanisms available to protect each party's rights and ensure a successful and balanced rental relationship.",
+      "A comprehensive and detailed guide to tenant and landlord rights and obligations according to the new rental system in the UAE, including thorough explanations of all legal provisions related to lease contracts, rent increases, contract termination, and dispute resolution. This guide covers all legal aspects that tenants and landlords need, with detailed explanations of the legal mechanisms available to protect each party's rights and ensure a successful and balanced rental relationship.",
     content: {
       ar: `
         <style>
@@ -2400,13 +2400,13 @@ export const articles: Article[] = [
         
         <div class="rental-article">
           <div class="article-header">
-            <h1 class="article-title">حقوق المستأجر والمؤجر في القانون السعودي</h1>
+            <h1 class="article-title">حقوق المستأجر والمؤجر في القانون الإماراتي</h1>
             <p class="article-subtitle">دليل شامل لنظام الإيجار الجديد وحماية حقوق الطرفين</p>
           </div>
 
           <div class="section">
             <h2>مقدمة عن نظام الإيجار الجديد</h2>
-            <p>صدر نظام الإيجار الجديد في المملكة العربية السعودية لتنظيم العلاقة بين المؤجر والمستأجر وحماية حقوق الطرفين. يهدف هذا النظام إلى تحقيق العدالة والشفافية في عقود الإيجار وضمان استقرار السوق العقاري.</p>
+            <p>صدر نظام الإيجار الجديد في دولة الإمارات العربية المتحدة لتنظيم العلاقة بين المؤجر والمستأجر وحماية حقوق الطرفين. يهدف هذا النظام إلى تحقيق العدالة والشفافية في عقود الإيجار وضمان استقرار السوق العقاري.</p>
             
             <div class="highlight-box">
               <h3>أهداف النظام الجديد</h3>
@@ -2535,7 +2535,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>حل النزاعات الإيجارية</h2>
-            <p>يوفر النظام السعودي آليات متعددة لحل النزاعات الإيجارية بشكل سريع وعادل:</p>
+            <p>يوفر النظام الإماراتي آليات متعددة لحل النزاعات الإيجارية بشكل سريع وعادل:</p>
             
             <h3>الوسائل الودية</h3>
             <ul>
@@ -2842,13 +2842,13 @@ export const articles: Article[] = [
         
         <div class="rental-article">
           <div class="article-header">
-            <h1 class="article-title">Tenant and Landlord Rights in Saudi Law</h1>
+            <h1 class="article-title">Tenant and Landlord Rights in UAE Law</h1>
             <p class="article-subtitle">Comprehensive Guide to the New Rental System and Rights Protection</p>
           </div>
 
           <div class="section">
             <h2>Introduction to the New Rental System</h2>
-            <p>The new rental system was issued in the Kingdom of Saudi Arabia to regulate the relationship between landlord and tenant and protect the rights of both parties. This system aims to achieve justice and transparency in rental contracts and ensure real estate market stability.</p>
+            <p>The new rental system was issued in the United Arab Emirates to regulate the relationship between landlord and tenant and protect the rights of both parties. This system aims to achieve justice and transparency in rental contracts and ensure real estate market stability.</p>
             
             <div class="highlight-box">
               <h3>System Objectives</h3>
@@ -2977,7 +2977,7 @@ export const articles: Article[] = [
 
           <div class="section">
             <h2>Rental Dispute Resolution</h2>
-            <p>The Saudi system provides multiple mechanisms for resolving rental disputes quickly and fairly:</p>
+            <p>The UAE system provides multiple mechanisms for resolving rental disputes quickly and fairly:</p>
             
             <h3>Amicable Methods</h3>
             <ul>
@@ -3031,19 +3031,19 @@ export const articles: Article[] = [
     date: "2024-01-05",
     readTimeAr: "6 دقائق",
     readTimeEn: "6 min read",
-    authorAr: "المحامي أحمد الراشد",
-    authorEn: "Lawyer Ahmed Al-Rashid",
+    authorAr: "المحامي عبدالرحمن الهرمودي",
+    authorEn: "Lawyer Abdulrahman Al-Harmoudi",
     image: blog_3.src,
   },
   {
     id: 4,
-    slug: "criminal-defense-strategies-saudi-arabia",
-    titleAr: "استراتيجيات الدفاع الجنائي في السعودية",
-    titleEn: "Criminal Defense Strategies in Saudi Arabia",
+    slug: "criminal-defense-strategies-uae",
+    titleAr: "استراتيجيات الدفاع الجنائي في الإمارات",
+    titleEn: "Criminal Defense Strategies in the UAE",
     excerptAr:
       "دليل شامل ومفصل لاستراتيجيات الدفاع الجنائي وحماية حقوق المتهمين في النظام القضائي السعودي، يتضمن شرحاً وافياً لجميع أنواع الجرائم والعقوبات المقررة لها، مع استراتيجيات دفاعية متقدمة وطرق حماية الحقوق القانونية. يغطي هذا الدليل جميع مراحل الدفاع الجنائي من التحقيق إلى المحاكمة والاستئناف، مع نصائح عملية مهمة للمتهمين وأسرهم لضمان محاكمة عادلة وحماية كاملة للحقوق القانونية.",
     excerptEn:
-      "A comprehensive and detailed guide to criminal defense strategies and protecting defendants' rights in the Saudi judicial system, including thorough explanations of all types of crimes and their prescribed penalties, with advanced defense strategies and methods for protecting legal rights. This guide covers all stages of criminal defense from investigation to trial and appeal, with important practical tips for defendants and their families to ensure a fair trial and complete protection of legal rights.",
+      "A comprehensive and detailed guide to criminal defense strategies and protecting defendants' rights in the UAE judicial system, including thorough explanations of all types of crimes and their prescribed penalties, with advanced defense strategies and methods for protecting legal rights. This guide covers all stages of criminal defense from investigation to trial and appeal, with important practical tips for defendants and their families to ensure a fair trial and complete protection of legal rights.",
       content: {
         ar: `
           <style>
@@ -3304,13 +3304,13 @@ export const articles: Article[] = [
           
           <div class="criminal-defense-article">
             <div class="article-header">
-              <h1 class="article-title">استراتيجيات الدفاع الجنائي في السعودية</h1>
+              <h1 class="article-title">استراتيجيات الدفاع الجنائي في الإمارات</h1>
               <p class="article-subtitle">دليل شامل لحماية حقوق المتهمين وضمان محاكمة عادلة</p>
             </div>
   
             <div class="section">
               <h2>مقدمة عن النظام الجنائي السعودي</h2>
-              <p>يستند النظام الجنائي في المملكة العربية السعودية إلى أحكام الشريعة الإسلامية والأنظمة المكملة لها، ويهدف إلى تحقيق العدالة وحماية المجتمع مع ضمان حقوق المتهمين. يتميز النظام بالتوازن بين حماية المجتمع ومحاكمة المتهمين وفق أسس العدالة والشفافية.</p>
+              <p>يستند النظام الجنائي في دولة الإمارات العربية المتحدة إلى أحكام الشريعة الإسلامية والأنظمة المكملة لها، ويهدف إلى تحقيق العدالة وحماية المجتمع مع ضمان حقوق المتهمين. يتميز النظام بالتوازن بين حماية المجتمع ومحاكمة المتهمين وفق أسس العدالة والشفافية.</p>
               
               <div class="highlight-box">
                 <h3>مبادئ النظام الجنائي السعودي</h3>
@@ -3326,7 +3326,7 @@ export const articles: Article[] = [
             </div>
   
             <div class="section">
-              <h2>حقوق المتهم في النظام السعودي</h2>
+              <h2>حقوق المتهم في النظام الإماراتي</h2>
               
               <div class="defense-strategies">
                 <div class="rights-box">
@@ -3870,16 +3870,16 @@ export const articles: Article[] = [
           
           <div class="criminal-defense-article">
             <div class="article-header">
-              <h1 class="article-title">Criminal Defense Strategies in Saudi Arabia</h1>
+              <h1 class="article-title">Criminal Defense Strategies in the UAE</h1>
               <p class="article-subtitle">Comprehensive Guide to Protecting Defendants' Rights and Ensuring Fair Trial</p>
             </div>
   
             <div class="section">
-              <h2>Introduction to Saudi Criminal System</h2>
-              <p>The criminal system in the Kingdom of Saudi Arabia is based on Islamic Sharia provisions and complementary regulations, aiming to achieve justice and protect society while ensuring defendants' rights. The system is characterized by balance between protecting society and trying defendants according to principles of justice and transparency.</p>
+              <h2>Introduction to UAE Criminal System</h2>
+              <p>The criminal system in the United Arab Emirates is based on Islamic Sharia provisions and complementary regulations, aiming to achieve justice and protect society while ensuring defendants' rights. The system is characterized by balance between protecting society and trying defendants according to principles of justice and transparency.</p>
               
               <div class="highlight-box">
-                <h3>Principles of Saudi Criminal System</h3>
+                <h3>Principles of UAE Criminal System</h3>
                 <ul>
                   <li>Presumption of innocence until proven guilty</li>
                   <li>Right to defense and fair trial guarantee</li>
@@ -3892,7 +3892,7 @@ export const articles: Article[] = [
             </div>
   
             <div class="section">
-              <h2>Defendant's Rights in Saudi System</h2>
+              <h2>Defendant's Rights in UAE System</h2>
               
               <div class="defense-strategies">
                 <div class="rights-box">
@@ -4183,19 +4183,19 @@ export const articles: Article[] = [
     date: "2024-01-20",
     readTimeAr: "8 دقائق",
     readTimeEn: "8 min read",
-    authorAr: "المحامي خالد المطيري",
-    authorEn: "Lawyer Khalid Al-Mutairi",
+    authorAr: "المحامي عبدالرحمن الهرمودي",
+    authorEn: "Lawyer Abdulrahman Al-Harmoudi",
     image: blog_4.src,
   },
   {
     id: 5,
-    slug: "contract-drafting-essentials-saudi-arabia",
-    titleAr: "أساسيات صياغة العقود في السعودية",
-    titleEn: "Contract Drafting Essentials in Saudi Arabia",
+    slug: "contract-drafting-essentials-uae",
+    titleAr: "أساسيات صياغة العقود في الإمارات",
+    titleEn: "Contract Drafting Essentials in the UAE",
     excerptAr:
-      "دليل عملي ومفصل لصياغة العقود وفق النظام السعودي، يشمل الأركان والشروط الأساسية والبنود الجوهرية وبنود حماية المخاطر، مع خطوات الصياغة الصحيحة والامتثال الشرعي والنظامي وآليات حل النزاعات.",
+      "دليل عملي ومفصل لصياغة العقود وفق النظام الإماراتي، يشمل الأركان والشروط الأساسية والبنود الجوهرية وبنود حماية المخاطر، مع خطوات الصياغة الصحيحة والامتثال الشرعي والنظامي وآليات حل النزاعات.",
     excerptEn:
-      "A practical, detailed guide to drafting contracts under Saudi law, covering core elements and conditions, essential and risk-protection clauses, proper drafting steps, Sharia and legal compliance, and dispute resolution mechanisms.",
+      "A practical, detailed guide to drafting contracts under UAE law, covering core elements and conditions, essential and risk-protection clauses, proper drafting steps, Sharia and legal compliance, and dispute resolution mechanisms.",
     content: {
       ar: `
         <style>
@@ -4399,13 +4399,13 @@ export const articles: Article[] = [
 
         <div class="contract-essentials-article">
           <div class="article-header">
-            <h1 class="article-title">أساسيات صياغة العقود في السعودية</h1>
-            <p class="article-subtitle">دليل عملي لصياغة العقود وفق الشريعة والأنظمة السعودية</p>
+            <h1 class="article-title">أساسيات صياغة العقود في الإمارات</h1>
+            <p class="article-subtitle">دليل عملي لصياغة العقود وفق الشريعة والأنظمة الإماراتية</p>
           </div>
 
           <div class="section">
             <h2>مقدمة</h2>
-            <p>تحمي الصياغة القانونية الصحيحة حقوق الأطراف وتمنع النزاعات المستقبلية. يركز هذا الدليل على العناصر الأساسية لصياغة العقود التجارية والمدنية في المملكة العربية السعودية، مع إبراز البنود الجوهرية وبنود حماية المخاطر وآليات حل النزاعات.</p>
+            <p>تحمي الصياغة القانونية الصحيحة حقوق الأطراف وتمنع النزاعات المستقبلية. يركز هذا الدليل على العناصر الأساسية لصياغة العقود التجارية والمدنية في دولة الإمارات العربية المتحدة، مع إبراز البنود الجوهرية وبنود حماية المخاطر وآليات حل النزاعات.</p>
             <div class="highlight-box">
               <h3>أهداف هذا الدليل</h3>
               <ul>
@@ -4725,13 +4725,13 @@ export const articles: Article[] = [
 
         <div class="contract-essentials-article">
           <div class="article-header">
-            <h1 class="article-title">Contract Drafting Essentials in Saudi Arabia</h1>
-            <p class="article-subtitle">A practical guide to drafting enforceable contracts under Saudi law</p>
+            <h1 class="article-title">Contract Drafting Essentials in the UAE</h1>
+            <p class="article-subtitle">A practical guide to drafting enforceable contracts under UAE law</p>
           </div>
 
           <div class="section">
             <h2>Introduction</h2>
-            <p>Proper legal drafting protects parties’ rights and prevents future disputes. This guide covers the core elements of drafting commercial and civil contracts in the Kingdom of Saudi Arabia, highlighting essential clauses, risk-protection provisions, and dispute resolution mechanisms.</p>
+            <p>Proper legal drafting protects parties’ rights and prevents future disputes. This guide covers the core elements of drafting commercial and civil contracts in the United Arab Emirates, highlighting essential clauses, risk-protection provisions, and dispute resolution mechanisms.</p>
             <div class="highlight-box">
               <h3>Guide Objectives</h3>
               <ul>
@@ -4879,7 +4879,7 @@ export const articles: Article[] = [
                 </tr>
                 <tr>
                   <td>Labor</td>
-                  <td>Compliance with Saudi Labor Law</td>
+                  <td>Compliance with UAE Labor Law</td>
                   <td>Ministry of Human Resources</td>
                 </tr>
                 <tr>
@@ -4956,19 +4956,19 @@ export const articles: Article[] = [
     date: "2024-01-18",
     readTimeAr: "9 دقائق",
     readTimeEn: "9 min read",
-    authorAr: "المحامية فاطمة العتيبي",
-    authorEn: "Lawyer Fatima Al-Otaibi",
+    authorAr: "المحامي عبدالرحمن الهرمودي",
+    authorEn: "Lawyer Abdulrahman Al-Harmoudi",
     image: blog_5.src,
   },
   {
     id: 6,
-    slug: "litigation-arbitration-saudi-arabia",
-    titleAr: "التقاضي والتحكيم في السعودية",
-    titleEn: "Litigation and Arbitration in Saudi Arabia",
+    slug: "litigation-arbitration-uae",
+    titleAr: "التقاضي والتحكيم في الإمارات",
+    titleEn: "Litigation and Arbitration in the UAE",
     excerptAr:
       "دليل شامل ومفصل لإجراءات التقاضي والتحكيم في النظام القضائي السعودي وطرق حل النزاعات، يتضمن شرحاً وافياً لجميع أنواع المحاكم والإجراءات القانونية مع مزايا وعيوب كل طريقة. يغطي هذا الدليل جميع مراحل التقاضي من رفع الدعوى إلى تنفيذ الأحكام، مع شرح مفصل لإجراءات التحكيم وطرق حل النزاعات البديلة، مع نصائح عملية مهمة لضمان نجاح العملية القانونية وتحقيق أفضل النتائج.",
     excerptEn:
-      "A comprehensive and detailed guide to litigation and arbitration procedures in the Saudi judicial system and dispute resolution methods, including thorough explanations of all types of courts and legal procedures with advantages and disadvantages of each method. This guide covers all stages of litigation from filing lawsuits to judgment enforcement, with detailed explanations of arbitration procedures and alternative dispute resolution methods, with important practical tips to ensure successful legal proceedings and achieve the best results.",
+      "A comprehensive and detailed guide to litigation and arbitration procedures in the UAE judicial system and dispute resolution methods, including thorough explanations of all types of courts and legal procedures with advantages and disadvantages of each method. This guide covers all stages of litigation from filing lawsuits to judgment enforcement, with detailed explanations of arbitration procedures and alternative dispute resolution methods, with important practical tips to ensure successful legal proceedings and achieve the best results.",
       content: {
         ar: `
           <style>
@@ -5229,20 +5229,20 @@ export const articles: Article[] = [
           
           <div class="contract-drafting-article">
             <div class="article-header">
-              <h1 class="article-title">أساسيات صياغة العقود في السعودية</h1>
+              <h1 class="article-title">أساسيات صياغة العقود في الإمارات</h1>
               <p class="article-subtitle">دليل شامل لصياغة العقود القانونية الصحيحة والفعالة</p>
             </div>
   
             <div class="section">
-              <h2>مقدمة عن صياغة العقود في النظام السعودي</h2>
-              <p>تعتبر صياغة العقود من أهم المهارات القانونية في الممارسة المهنية، حيث تتطلب فهماً عميقاً للقوانين السعودية وأحكام الشريعة الإسلامية. العقد الجيد هو الذي يحمي حقوق جميع الأطراف ويمنع النزاعات المستقبلية من خلال وضوح الشروط والالتزامات.</p>
+              <h2>مقدمة عن صياغة العقود في النظام الإماراتي</h2>
+              <p>تعتبر صياغة العقود من أهم المهارات القانونية في الممارسة المهنية، حيث تتطلب فهماً عميقاً للقوانين الإماراتية وأحكام الشريعة الإسلامية. العقد الجيد هو الذي يحمي حقوق جميع الأطراف ويمنع النزاعات المستقبلية من خلال وضوح الشروط والالتزامات.</p>
               
               <div class="highlight-box">
                 <h3>أهمية الصياغة القانونية الصحيحة</h3>
                 <ul>
                   <li>حماية حقوق ومصالح جميع الأطراف</li>
                   <li>منع النزاعات والخلافات المستقبلية</li>
-                  <li>ضمان الامتثال للقوانين السعودية</li>
+                  <li>ضمان الامتثال للقوانين الإماراتية</li>
                   <li>توضيح الالتزامات والحقوق بدقة</li>
                   <li>تسهيل عملية التنفيذ والمتابعة</li>
                   <li>تقليل المخاطر القانونية والمالية</li>
@@ -5251,8 +5251,8 @@ export const articles: Article[] = [
             </div>
   
             <div class="section">
-              <h2>أركان العقد في النظام السعودي</h2>
-              <p>يجب أن يتضمن كل عقد الأركان الأساسية التي نص عليها النظام السعودي وأحكام الشريعة الإسلامية:</p>
+              <h2>أركان العقد في النظام الإماراتي</h2>
+              <p>يجب أن يتضمن كل عقد الأركان الأساسية التي نص عليها النظام الإماراتي وأحكام الشريعة الإسلامية:</p>
               
               <div class="contract-elements">
                 <div class="element-box">
@@ -5438,7 +5438,7 @@ export const articles: Article[] = [
             </div>
   
             <div class="section">
-              <h2>الامتثال للقوانين السعودية</h2>
+              <h2>الامتثال للقوانين الإماراتية</h2>
               
               <table class="comparison-table">
                 <thead>
@@ -5847,20 +5847,20 @@ export const articles: Article[] = [
           
           <div class="contract-drafting-article">
             <div class="article-header">
-              <h1 class="article-title">Contract Drafting Essentials in Saudi Arabia</h1>
+              <h1 class="article-title">Contract Drafting Essentials in the UAE</h1>
               <p class="article-subtitle">Comprehensive Guide to Drafting Correct and Effective Legal Contracts</p>
             </div>
   
             <div class="section">
-              <h2>Introduction to Contract Drafting in Saudi System</h2>
-              <p>Contract drafting is one of the most important legal skills in professional practice, requiring deep understanding of Saudi laws and Islamic Sharia provisions. A good contract protects all parties' rights and prevents future disputes through clear terms and obligations.</p>
+              <h2>Introduction to Contract Drafting in UAE System</h2>
+              <p>Contract drafting is one of the most important legal skills in professional practice, requiring deep understanding of UAE laws and Islamic Sharia provisions. A good contract protects all parties' rights and prevents future disputes through clear terms and obligations.</p>
               
               <div class="highlight-box">
                 <h3>Importance of Proper Legal Drafting</h3>
                 <ul>
                   <li>Protecting rights and interests of all parties</li>
                   <li>Preventing future disputes and conflicts</li>
-                  <li>Ensuring compliance with Saudi laws</li>
+                  <li>Ensuring compliance with UAE laws</li>
                   <li>Clarifying obligations and rights precisely</li>
                   <li>Facilitating implementation and follow-up</li>
                   <li>Reducing legal and financial risks</li>
@@ -5869,8 +5869,8 @@ export const articles: Article[] = [
             </div>
   
             <div class="section">
-              <h2>Contract Elements in Saudi System</h2>
-              <p>Every contract must include basic elements as stipulated by Saudi law and Islamic Sharia provisions:</p>
+              <h2>Contract Elements in UAE System</h2>
+              <p>Every contract must include basic elements as stipulated by UAE law and Islamic Sharia provisions:</p>
               
               <div class="contract-elements">
                 <div class="element-box">
@@ -6056,7 +6056,7 @@ export const articles: Article[] = [
             </div>
   
             <div class="section">
-              <h2>Compliance with Saudi Laws</h2>
+              <h2>Compliance with UAE Laws</h2>
               
               <table class="comparison-table">
                 <thead>
@@ -6074,7 +6074,7 @@ export const articles: Article[] = [
                   </tr>
                   <tr>
                     <td>Employment Contracts</td>
-                    <td>Compliance with Saudi Labor Law</td>
+                    <td>Compliance with UAE Labor Law</td>
                     <td>Ministry of Human Resources</td>
                   </tr>
                   <tr>
@@ -6212,8 +6212,8 @@ export const articles: Article[] = [
     date: "2024-01-25",
     readTimeAr: "10 دقائق",
     readTimeEn: "10 min read",
-    authorAr: "المحامي محمد الشمري",
-    authorEn: "Lawyer Mohammed Al-Shammari",
+    authorAr: "المحامي عبدالرحمن الهرمودي",
+    authorEn: "Lawyer Abdulrahman Al-Harmoudi",
     image: blog_6.src,
   },
 ];

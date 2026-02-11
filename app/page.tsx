@@ -33,7 +33,7 @@ export default function HomePage() {
         {/* Quote + FAQ + Testimonials */}
         <TestimonialCarousel />
 
-        {/* Booking Form + Blog + Final CTA */}
+        {/* Blog + Final CTA */}
         <CTASection />
       </main>
       <Footer />

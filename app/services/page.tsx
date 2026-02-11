@@ -372,7 +372,7 @@ export default function ServicesPage() {
                   className="border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10 bg-transparent font-medium px-8 cursor-pointer tracking-wide uppercase"
                   asChild
                 >
-                  <a href="tel:+966501234567">
+                  <a href="tel:+971501234567">
                     <Phone className="me-2 h-5 w-5" />
                     {locale === "ar" ? "اتصل الآن" : "Call Now"}
                   </a>

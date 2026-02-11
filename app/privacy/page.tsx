@@ -349,21 +349,21 @@ export default function PrivacyPage() {
                       <strong>
                         {locale === "ar" ? "البريد الإلكتروني: " : "Email: "}
                       </strong>
-                      privacy@premiumlegal.com
+                      privacy@firmen-law.ae
                     </motion.p>
                     <motion.p variants={fadeInUp}>
                       <strong>
                         {locale === "ar" ? "الهاتف: " : "Phone: "}
                       </strong>
-                      <span dir="ltr">+966 50 123 4567</span>
+                      <span dir="ltr">+971 50 123 4567</span>
                     </motion.p>
                     <motion.p variants={fadeInUp}>
                       <strong>
                         {locale === "ar" ? "العنوان: " : "Address: "}
                       </strong>
                       {locale === "ar"
-                        ? "شارع الملك فهد، حي العليا، الرياض 12211، المملكة العربية السعودية"
-                        : "King Fahd Road, Al Olaya District, Riyadh 12211, Saudi Arabia"}
+                        ? "شارع الشيخ زايد، مركز دبي المالي العالمي، دبي، الإمارات العربية المتحدة"
+                        : "Sheikh Zayed Road, DIFC, Dubai, United Arab Emirates"}
                     </motion.p>
                   </motion.div>
                 </CardContent>

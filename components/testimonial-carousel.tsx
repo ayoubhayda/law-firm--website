@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Star, Quote, MessageSquare } from "lucide-react";
+import { ChevronDown, Star, Quote, MessageSquare, Scale } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 
 interface FAQ {
@@ -19,36 +19,36 @@ const faqs: FAQ[] = [
     question: "What are the initial steps to start a legal case?",
     questionAr: "ما هي الخطوات الأساسية لبدء قضية قانونية؟",
     answer:
-      "The first step is to schedule a consultation where we assess your situation, gather necessary documents, and develop a legal strategy tailored to your case. We then proceed with filing the appropriate legal documents.",
+      "The first step is to schedule a consultation where I assess your situation, gather necessary documents, and develop a legal strategy tailored to your case under UAE law. I then proceed with filing the appropriate legal documents with the relevant courts.",
     answerAr:
-      "الخطوة الأولى هي حجز استشارة حيث نقيم وضعك، نجمع المستندات اللازمة، ونطور استراتيجية قانونية مخصصة لقضيتك. ثم نتابع بتقديم المستندات القانونية المناسبة.",
+      "الخطوة الأولى هي حجز استشارة حيث أقيّم وضعك، أجمع المستندات اللازمة، وأطوّر استراتيجية قانونية مخصصة لقضيتك وفق القانون الإماراتي. ثم أتابع بتقديم المستندات القانونية للمحاكم المختصة.",
   },
   {
     id: 2,
     question: "What are the typical costs for legal services?",
     questionAr: "ما هي التكاليف المتوقعة للخدمات القانونية؟",
     answer:
-      "Our fees vary depending on the complexity and type of case. We offer transparent pricing with options including hourly rates, fixed fees, and retainer packages. We provide a detailed estimate during the initial consultation.",
+      "Fees vary depending on the complexity and type of case. I offer transparent pricing with options including hourly rates, fixed fees, and retainer arrangements. A detailed estimate is provided during the initial consultation.",
     answerAr:
-      "تختلف أتعابنا حسب تعقيد ونوع القضية. نقدم تسعيراً شفافاً مع خيارات تشمل الأسعار بالساعة والرسوم الثابتة وباقات الاشتراك. نقدم تقديراً مفصلاً خلال الاستشارة الأولية.",
+      "تختلف الأتعاب حسب تعقيد ونوع القضية. أقدم تسعيراً شفافاً مع خيارات تشمل الأسعار بالساعة والرسوم الثابتة واتفاقات الاشتراك. يتم تقديم تقدير مفصل خلال الاستشارة الأولية.",
   },
   {
     id: 3,
-    question: "What documents are needed for contract authentication?",
-    questionAr: "ما هي الإجراءات اللازمة لتوثيق عقود أو اتفاقيات قانونية؟",
+    question: "Do you handle cases in DIFC and Abu Dhabi courts?",
+    questionAr: "هل تتعامل مع قضايا في محاكم ديفي وأبوظبي؟",
     answer:
-      "For contract authentication, you'll need valid identification, the original contract, and any supporting documents. We guide you through the entire notarization process and ensure all legal requirements are met.",
+      "Yes, I represent clients across all UAE courts including Dubai Courts, DIFC Courts, Abu Dhabi Courts, and federal courts. I also handle arbitration cases and provide legal opinions on UAE law.",
     answerAr:
-      "لتوثيق العقود، ستحتاج إلى هوية سارية، العقد الأصلي، وأي مستندات داعمة. نرشدك خلال عملية التوثيق بأكملها ونضمن استيفاء جميع المتطلبات القانونية.",
+      "نعم، أمثل العملاء في جميع محاكم الإمارات بما في ذلك محاكم دبي ومحاكم مركز دبي المالي العالمي ومحاكم أبوظبي والمحاكم الاتحادية. كما أتعامل مع قضايا التحكيم وأقدم آراء قانونية.",
   },
   {
     id: 4,
-    question: "How long does a typical legal case take?",
-    questionAr: "كم تستغرق القضية القانونية النموذجية؟",
+    question: "How long does a typical legal case take in the UAE?",
+    questionAr: "كم تستغرق القضية القانونية في الإمارات؟",
     answer:
-      "The duration varies significantly based on case complexity, court schedules, and the cooperation of all parties. Simple matters may resolve in weeks, while complex litigation can take months or years.",
+      "Duration varies based on case complexity and jurisdiction. Simple matters in Dubai Courts may resolve in weeks, while complex commercial disputes can take months. DIFC cases follow their own timeline.",
     answerAr:
-      "تختلف المدة بشكل كبير بناءً على تعقيد القضية وجداول المحكمة وتعاون جميع الأطراف. الأمور البسيطة قد تُحل في أسابيع، بينما التقاضي المعقد قد يستغرق شهوراً أو سنوات.",
+      "تختلف المدة بناءً على تعقيد القضية والاختصاص القضائي. القضايا البسيطة في محاكم دبي قد تُحل في أسابيع، بينما النزاعات التجارية المعقدة قد تستغرق شهوراً. قضايا مركز دبي المالي لها جدول زمني خاص.",
   },
 ];
 
@@ -66,38 +66,38 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Ahmed Al-Rashid",
-    nameAr: "أحمد الراشد",
-    role: "Business Owner",
-    roleAr: "صاحب شركة",
+    name: "Khalid Al-Mansouri",
+    nameAr: "خالد المنصوري",
+    role: "Business Owner - Dubai",
+    roleAr: "صاحب شركة - دبي",
     content:
-      "Exceptional legal service with great attention to detail. The team provided professional guidance throughout our case.",
+      "Attorney Al-Harmoudi provided exceptional legal guidance for our company's establishment in DIFC. His deep knowledge of UAE commercial law made the process seamless.",
     contentAr:
-      "خدمة قانونية استثنائية مع اهتمام كبير بالتفاصيل. قدم الفريق إرشاداً مهنياً طوال قضيتنا.",
+      "قدم المحامي الهرمودي إرشاداً قانونياً استثنائياً لتأسيس شركتنا في مركز دبي المالي. معرفته العميقة بالقانون التجاري الإماراتي جعلت العملية سلسة.",
     rating: 5,
   },
   {
     id: 2,
-    name: "Sarah Al-Mutairi",
-    nameAr: "سارة المطيري",
-    role: "Real Estate Investor",
-    roleAr: "مستثمرة عقارية",
+    name: "Fatima Al-Suwaidi",
+    nameAr: "فاطمة السويدي",
+    role: "Real Estate Investor - Abu Dhabi",
+    roleAr: "مستثمرة عقارية - أبوظبي",
     content:
-      "Outstanding expertise in real estate law. They made the complex process simple and stress-free.",
+      "Outstanding expertise in UAE real estate law. He handled our property transactions in Dubai Marina with professionalism and attention to every detail.",
     contentAr:
-      "خبرة متميزة في قانون العقارات. جعلوا العملية المعقدة بسيطة وخالية من التوتر.",
+      "خبرة متميزة في قانون العقارات الإماراتي. تعامل مع معاملاتنا العقارية في دبي مارينا باحترافية واهتمام بكل التفاصيل.",
     rating: 5,
   },
   {
     id: 3,
-    name: "Mohammed Al-Fahad",
-    nameAr: "محمد الفهد",
-    role: "Startup Founder",
-    roleAr: "مؤسس شركة ناشئة",
+    name: "Sultan Al-Maktoum",
+    nameAr: "سلطان المكتوم",
+    role: "Tech Startup Founder - Dubai",
+    roleAr: "مؤسس شركة تقنية - دبي",
     content:
-      "Their strategic approach helped our startup avoid costly mistakes. Highly recommended for business legal matters.",
+      "His strategic approach helped our Dubai-based startup navigate complex licensing and regulatory requirements. Highly recommended for business legal matters in the UAE.",
     contentAr:
-      "نهجهم الاستراتيجي ساعد شركتنا الناشئة على تجنب الأخطاء المكلفة. أوصي بهم بشدة للأمور القانونية التجارية.",
+      "نهجه الاستراتيجي ساعد شركتنا الناشئة في دبي على التعامل مع متطلبات الترخيص والتنظيم المعقدة. أوصي به بشدة للأمور القانونية التجارية في الإمارات.",
     rating: 5,
   },
 ];
@@ -113,27 +113,46 @@ export function TestimonialCarousel() {
 
   return (
     <div className="space-y-0">
-      {/* Legal Quote Section - Dark with accent */}
-      <section className="py-12 lg:py-16 bg-accent">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      {/* Legal Quote Section - Minimal Dark */}
+      <section className="py-16 lg:py-24 bg-background">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
+            className="flex flex-col items-center text-center max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <Quote className="w-10 h-10 text-accent-foreground/50 mx-auto mb-4" />
-            <blockquote className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-accent-foreground leading-relaxed mb-4">
-              {locale === "ar"
-                ? '"القانون قوة لابد أن تطبق على الجميع، و إلا أصبح الوطن غابة"'
-                : '"The law is a force that must apply to everyone, otherwise the nation becomes a jungle"'}
+            {/* Decorative top line */}
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-10 h-px bg-accent/40" />
+              <Scale className="w-4 h-4 text-accent/60" />
+              <span className="w-10 h-px bg-accent/40" />
+            </div>
+
+            {/* Quote */}
+            <blockquote className="relative">
+              <span className="absolute -top-4 -start-2 sm:-start-6 text-accent/20 text-5xl sm:text-6xl lg:text-7xl font-serif leading-none select-none">
+                &ldquo;
+              </span>
+              <p className="text-foreground/90 text-lg sm:text-xl lg:text-2xl font-serif italic leading-relaxed lg:leading-loose tracking-wide px-4 sm:px-6">
+                {locale === "ar"
+                  ? "القانون هو العقل المتحرر من الهوى"
+                  : "Law is reason, free from passion"}
+              </p>
+              <span className="absolute -bottom-6 -end-2 sm:-end-6 text-accent/20 text-5xl sm:text-6xl lg:text-7xl font-serif leading-none select-none">
+                &rdquo;
+              </span>
             </blockquote>
-            <p className="text-accent-foreground/70 text-sm">
-              {locale === "ar"
-                ? "— المحامي عبدالرحمن الهرمودي"
-                : "— Attorney Abdulrahman Al-Harmoudi"}
-            </p>
+
+            {/* Author */}
+            <div className="mt-8 flex items-center gap-3">
+              <span className="w-6 h-px bg-accent/30" />
+              <span className="text-accent/70 text-xs tracking-[0.2em] uppercase font-medium">
+                {locale === "ar" ? "أرسطو" : "Aristotle"}
+              </span>
+              <span className="w-6 h-px bg-accent/30" />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -164,7 +183,7 @@ export function TestimonialCarousel() {
             {faqs.map((faq, index) => (
               <motion.div
                 key={faq.id}
-                className="bg-white overflow-hidden shadow-sm"
+                className="bg-white overflow-hidden border border-[#0a1628]/10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

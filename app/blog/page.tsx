@@ -265,7 +265,7 @@ export default function BlogPage() {
                     setSearchTerm("");
                     setSelectedCategory("all");
                   }}
-                  className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                  className="border-[#0a1628] text-[#0a1628] hover:bg-[#0a1628] hover:text-white bg-transparent transition-all duration-300"
                 >
                   {locale === "ar" ? "عرض جميع المقالات" : "View All Articles"}
                 </Button>

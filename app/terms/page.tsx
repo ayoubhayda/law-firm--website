@@ -209,21 +209,21 @@ export default function TermsPage() {
         locale === "ar"
           ? [
               "أحكام القانون وحل النزاعات:",
-              "• تخضع هذه الشروط لقوانين المملكة العربية السعودية",
-              "• أي نزاع ينشأ يحال إلى المحاكم المختصة في الرياض",
+              "• تخضع هذه الشروط لقوانين دولة الإمارات العربية المتحدة",
+              "• أي نزاع ينشأ يحال إلى المحاكم المختصة في دبي",
               "• نشجع على حل النزاعات ودياً قبل اللجوء للقضاء",
               "• يمكن اللجوء للتحكيم بموافقة الطرفين",
               "• اللغة العربية هي اللغة المعتمدة في حل النزاعات",
-              "• تطبق الأنظمة واللوائح السعودية على جميع الخدمات",
+              "• تطبق القوانين الاتحادية والمحلية لإمارة دبي على جميع الخدمات",
             ]
           : [
               "Law and dispute resolution provisions:",
-              "• These terms are subject to the laws of the Kingdom of Saudi Arabia",
-              "• Any arising dispute is referred to the competent courts in Riyadh",
+              "• These terms are subject to the laws of the United Arab Emirates",
+              "• Any arising dispute is referred to the competent courts in Dubai",
               "• We encourage amicable dispute resolution before litigation",
               "• Arbitration may be used with both parties' consent",
               "• Arabic is the approved language for dispute resolution",
-              "• Saudi regulations and laws apply to all services",
+              "• UAE federal and Dubai local laws apply to all services",
             ],
     },
   ];
@@ -383,21 +383,21 @@ export default function TermsPage() {
                       <strong>
                         {locale === "ar" ? "البريد الإلكتروني: " : "Email: "}
                       </strong>
-                      legal@premiumlegal.com
+                      legal@firmen-law.ae
                     </motion.p>
                     <motion.p variants={fadeInUp}>
                       <strong>
                         {locale === "ar" ? "الهاتف: " : "Phone: "}
                       </strong>
-                      <span dir="ltr">+966 50 123 4567</span>
+                      <span dir="ltr">+971 50 123 4567</span>
                     </motion.p>
                     <motion.p variants={fadeInUp}>
                       <strong>
                         {locale === "ar" ? "العنوان: " : "Address: "}
                       </strong>
                       {locale === "ar"
-                        ? "شارع الملك فهد، حي العليا، الرياض 12211، المملكة العربية السعودية"
-                        : "King Fahd Road, Al Olaya District, Riyadh 12211, Saudi Arabia"}
+                        ? "شارع الشيخ زايد، مركز دبي المالي العالمي، دبي، الإمارات العربية المتحدة"
+                        : "Sheikh Zayed Road, DIFC, Dubai, United Arab Emirates"}
                     </motion.p>
                   </motion.div>
                 </CardContent>

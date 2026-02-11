@@ -121,7 +121,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-border text-foreground hover:border-accent hover:text-accent bg-transparent hover:bg-transparent"
+                    className="border-accent text-accent hover:bg-accent hover:text-accent-foreground bg-transparent transition-all duration-300"
                   >
                     {locale === "ar" ? "اتصل الآن" : "Call Now"}
                     <Phone className="ms-2 h-5 w-5" />
@@ -269,7 +269,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                     </Button>
                     <Button
                       variant="outline"
-                      className="w-full bg-transparent border-border text-white hover:border-accent/50 hover:text-accent cursor-pointer transition-all"
+                      className="w-full bg-transparent border-accent text-accent hover:bg-accent hover:text-accent-foreground cursor-pointer transition-all duration-300"
                     >
                       {locale === "ar" ? "اتصل الآن" : "Call Now"}
                       <Phone className="ms-2 h-4 w-4" />
@@ -432,7 +432,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                         {/* CTA */}
                         <Button
                           variant="outline"
-                          className="w-full border-[#0a1628]/20 text-[#0a1628] hover:bg-accent hover:text-white hover:border-accent transition-all duration-300 cursor-pointer bg-transparent"
+                          className="w-full border-[#0a1628] text-[#0a1628] hover:bg-[#0a1628] hover:text-white bg-transparent transition-all duration-300 cursor-pointer"
                           onClick={() =>
                             (window.location.href = `/services/${relatedService.slug}`)
                           }

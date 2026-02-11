@@ -220,8 +220,8 @@ export default function AboutPage() {
                 {/* Description */}
                 <p className="text-[#0a1628]/70 text-base lg:text-lg mb-6 leading-relaxed">
                   {locale === "ar"
-                    ? "بخبرة تزيد عن 15 عاماً في الممارسة القانونية، أقدم خدمات قانونية شاملة ومتخصصة في مختلف المجالات القانونية. حصلت على درجة البكالوريوس في الحقوق من جامعة الملك سعود بامتياز مع مرتبة الشرف."
-                    : "With over 15 years of legal practice experience, I provide comprehensive and specialized legal services across various legal fields. I earned my Bachelor's degree in Law from King Saud University with honors."}
+                    ? "بخبرة تزيد عن 15 عاماً في الممارسة القانونية في دولة الإمارات، أقدم خدمات قانونية شاملة ومتخصصة في مختلف المجالات القانونية. حصلت على درجة البكالوريوس في الحقوق من جامعة الإمارات العربية المتحدة بامتياز مع مرتبة الشرف."
+                    : "With over 15 years of legal practice experience in the UAE, I provide comprehensive and specialized legal services across various legal fields. I earned my Bachelor's degree in Law from UAE University with honors."}
                 </p>
 
                 <p className="text-[#0a1628]/60 text-sm lg:text-base mb-8 leading-relaxed">

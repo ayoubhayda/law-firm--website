@@ -2,12 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Scale,
-  FileText,
-  Building,
-  Gavel,
   Users,
+  Home,
+  Briefcase,
   Shield,
+  FileText,
+  Gavel,
   ArrowRight,
   ArrowLeft,
   Eye,
@@ -21,49 +21,49 @@ export function ServicesPreview() {
   const { locale } = useLocale();
   const ArrowIcon = locale === "ar" ? ArrowLeft : ArrowRight;
 
-  // Services grid data
+  // Services grid data - must match app/services/page.tsx
   const services = [
     {
-      icon: Scale,
-      titleAr: "الاستشارات القانونية",
-      titleEn: "Legal Consultations",
-      descAr: "استشارات قانونية متخصصة في جميع المجالات",
-      descEn: "Specialized legal consultations in all fields",
+      icon: Users,
+      titleAr: "قانون الأسرة",
+      titleEn: "Family Law",
+      descAr: "قضايا الزواج والطلاق وحضانة الأطفال والنفقة",
+      descEn: "Marriage, divorce, child custody, and alimony cases",
     },
     {
-      icon: Gavel,
-      titleAr: "الترافع في المحاكم",
-      titleEn: "Court Representation",
-      descAr: "تمثيل قانوني احترافي أمام جميع المحاكم",
-      descEn: "Professional legal representation in all courts",
+      icon: Home,
+      titleAr: "العقارات",
+      titleEn: "Real Estate",
+      descAr: "المعاملات العقارية والبيع والشراء والإيجار",
+      descEn: "Real estate transactions, buying, selling, and leasing",
     },
     {
-      icon: FileText,
-      titleAr: "الترجمة القانونية",
-      titleEn: "Legal Translation",
-      descAr: "ترجمة معتمدة للوثائق والعقود القانونية",
-      descEn: "Certified translation of legal documents and contracts",
+      icon: Briefcase,
+      titleAr: "القانون التجاري",
+      titleEn: "Business Law",
+      descAr: "تأسيس الشركات والعقود التجارية والامتثال",
+      descEn: "Company formation, commercial contracts, and compliance",
     },
     {
       icon: Shield,
-      titleAr: "الملكية الفكرية",
-      titleEn: "Intellectual Property",
-      descAr: "حماية العلامات التجارية وبراءات الاختراع",
-      descEn: "Protection of trademarks and patents",
+      titleAr: "الدفاع الجنائي",
+      titleEn: "Criminal Defense",
+      descAr: "تمثيل قانوني في القضايا الجنائية وحماية الحقوق",
+      descEn: "Legal representation in criminal cases and rights protection",
     },
     {
-      icon: Users,
-      titleAr: "الأحوال والعائلات",
-      titleEn: "Family Law",
-      descAr: "قضايا الأسرة والأحوال الشخصية",
-      descEn: "Family matters and personal status cases",
+      icon: FileText,
+      titleAr: "صياغة العقود",
+      titleEn: "Contract Drafting",
+      descAr: "صياغة ومراجعة العقود القانونية بجميع أنواعها",
+      descEn: "Drafting and reviewing all types of legal contracts",
     },
     {
-      icon: Building,
-      titleAr: "التراعات القضائية",
-      titleEn: "Judicial Disputes",
-      descAr: "حل النزاعات التجارية والمدنية",
-      descEn: "Resolution of commercial and civil disputes",
+      icon: Gavel,
+      titleAr: "التقاضي والتحكيم",
+      titleEn: "Litigation & Arbitration",
+      descAr: "تمثيل قانوني أمام المحاكم وهيئات التحكيم",
+      descEn: "Legal representation before courts and arbitration bodies",
     },
   ];
 
@@ -75,7 +75,7 @@ export function ServicesPreview() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Vision Card */}
             <motion.div
-              className="bg-white p-8 lg:p-10 shadow-sm"
+              className="bg-white p-8 lg:p-10 border border-[#0a1628]/10"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -98,7 +98,7 @@ export function ServicesPreview() {
 
             {/* Mission Card */}
             <motion.div
-              className="bg-white p-8 lg:p-10 shadow-sm"
+              className="bg-white p-8 lg:p-10 border border-[#0a1628]/10"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -145,8 +145,8 @@ export function ServicesPreview() {
             </h2>
             <p className="text-muted-foreground text-base lg:text-lg max-w-2xl mx-auto">
               {locale === "ar"
-                ? "نقدم مجموعة شاملة من الخدمات القانونية لتلبية جميع احتياجاتكم"
-                : "We offer a comprehensive range of legal services to meet all your needs"}
+                ? "أقدم خدمات قانونية شاملة في دبي والإمارات"
+                : "Comprehensive legal services in Dubai and the UAE"}
             </p>
           </motion.div>
 

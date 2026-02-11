@@ -66,7 +66,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: locale === "ar" ? "الهاتف" : "Phone",
-      value: "+966 50 123 4567",
+      value: "+971 50 123 4567",
       description:
         locale === "ar"
           ? "متاح من 9 صباحاً إلى 6 مساءً"
@@ -75,7 +75,7 @@ export default function ContactPage() {
     {
       icon: MessageCircle,
       title: locale === "ar" ? "واتساب" : "WhatsApp",
-      value: "+966 50 123 4567",
+      value: "+971 50 123 4567",
       description:
         locale === "ar"
           ? "متاح 24/7 للاستفسارات العاجلة"
@@ -84,7 +84,7 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: locale === "ar" ? "البريد الإلكتروني" : "Email",
-      value: "info@premiumlegal.com",
+      value: "info@firmen-law.ae",
       description:
         locale === "ar" ? "سنرد خلال 24 ساعة" : "We'll respond within 24 hours",
     },
@@ -93,12 +93,12 @@ export default function ContactPage() {
       title: locale === "ar" ? "العنوان" : "Address",
       value:
         locale === "ar"
-          ? "الرياض، المملكة العربية السعودية"
-          : "Riyadh, Saudi Arabia",
+          ? "دبي، الإمارات العربية المتحدة"
+          : "Dubai, United Arab Emirates",
       description:
         locale === "ar"
-          ? "شارع الملك فهد، حي العليا، الرياض 12211"
-          : "King Fahd Road, Al Olaya District, Riyadh 12211",
+          ? "شارع الشيخ زايد، مركز دبي المالي العالمي"
+          : "Sheikh Zayed Road, DIFC",
     },
   ];
 
@@ -108,12 +108,8 @@ export default function ContactPage() {
       hours: locale === "ar" ? "9:00 ص - 6:00 م" : "9:00 AM - 6:00 PM",
     },
     {
-      day: locale === "ar" ? "الجمعة" : "Friday",
+      day: locale === "ar" ? "الجمعة - السبت" : "Friday - Saturday",
       hours: locale === "ar" ? "مغلق" : "Closed",
-    },
-    {
-      day: locale === "ar" ? "السبت" : "Saturday",
-      hours: locale === "ar" ? "10:00 ص - 2:00 م" : "10:00 AM - 2:00 PM",
     },
   ];
 
